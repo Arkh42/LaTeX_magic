@@ -23,3 +23,5 @@ The *Automation* folder aims the automation of LaTeX in order to improve the usa
 The *Tutorials* folder gathers the minimum information required to understand specific subjects
 (e.g., mathematics with LaTeX) and proposes additional information (URLs, books references...)
 for those who want to go further.
+
+Information related to a specific folder is provided through a "README.md" file located at the folder level.
