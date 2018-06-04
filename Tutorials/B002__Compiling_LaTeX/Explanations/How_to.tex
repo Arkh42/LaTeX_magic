@@ -1,0 +1,94 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[11pt]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
+% Language
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+
+
+%% Document
+% ---------
+
+% Information
+\title{Compiling with \LaTeX}
+\author[A. Quenon]{Alexandre Quenon}
+
+% Main
+\begin{document}
+%|---begin
+
+% Title page
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Existing compilers}
+	
+	Four main compilers:
+	\begin{enumerate}
+		\item latex,
+		\item pdflatex,
+		\item lualatex,
+		\item xelatex.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A very short history}
+	
+	First steps:
+	\begin{enumerate}
+		\item \TeX{} (Donald Knuth), the original work;
+		\item \LaTeX{} (Leslie Lamport), a layer above \TeX{} which facilitates and standardises the use of \TeX{} (packages, classes, and so on).
+	\end{enumerate}
+	Both generates DVI files.
+
+	With the evolution of IT, DVI files were slowly replaced by PDF files, which embed several properties such as hyperlinks and metadata: birth of \textit{pdftex} and \textit{pdflatex} (Hàn Thế Thành), which generate PDF files.
+	
+	Next step was the management of other languages with different characters and support of modern fonts: XeTeX.
+	On the other hand, an attempt to extend the existing  \TeX{} has been made with the Lua programming language: LuaTeX.
+	Of course, both exist with \LaTeX: XeLaTeX and LuaLaTeX.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Differences?}
+	
+	\begin{table}
+		\caption{Comparison between \LaTeX{} compilers}
+		\begin{tabular}{*{3}{c}}
+			Compiler & Output &      Images      \\
+			 latex   &  dvi   &       .eps       \\
+			pdflatex &  pdf   & .png, .jpg, .pdf \\
+			lualatex &  pdf   & .png, .jpg, .pdf \\
+			xelatex  &  pdf   & .png, .jpg, .pdf
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+% Some references
+% https://fr.sharelatex.com/learn/Choosing_a_LaTeX_Compiler
+% https://fr.sharelatex.com/blog/2012/12/01/the-tex-family-tree-latex-pdftex-xelatex-luatex-context.html
+% https://texfaq.github.io/FAQ-xetex-luatex
+% https://www.overleaf.com/blog/500-whats-in-a-name-a-guide-to-the-many-flavours-of-tex
+% https://www.gutenberg.eu.org/IMG/pdf/UtiliserLuaLaTeX1_book.pdf
+% https://texnique.fr/osqa/questions/643/pdftex-luatex-xetex-lequel-choisir
+% http://jobonne.org/luatest1.pdf
+% https://www.gutenberg.eu.org/IMG/pdf/UtiliserLuaLaTeX1_book.pdf
+
+%|---end
+\end{document}
