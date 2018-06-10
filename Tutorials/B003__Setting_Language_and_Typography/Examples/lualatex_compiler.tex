@@ -5,16 +5,83 @@
 \documentclass[11pt, a4paper]{report}
 
 % Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
 
 % Language and typography
 
-
+% Lorem Ipsum (for test purpose)
 \usepackage{lipsum}
 
 
 %% Document
 % ---------
 
+% Information
+\title{Setting Font, Language and Typography}
+\author{Alexandre Quenon}
+
+% Text
 \begin{document}
-	\lipsum[1-10]
+%******begin******
+
+\maketitle
+
+\tableofcontents
+
+
+\chapter{Font selection examples}
+
+	This chapter provides a quick overview of the available commands to modify the text font locally:
+	\begin{itemize}
+		\item normal,
+		\item slanted (rarely used),
+		\item italic,
+		\item bold,
+		\item italic bold,
+		\item small capitals.
+	\end{itemize}
+
+	All examples are based on the Latin Modern Roman font family.
+	Text is generated thanks to the well-known \textit{Lorem Ipsum}.
+
+
+	\section{Normal font example}
+	
+		\lipsum[1]
+		
+	
+	\section{Slanted font example}
+	
+		\textsl{\lipsum[1]}
+	
+	
+	\section{Italic font example}
+	
+		\textit{\lipsum[1]}
+		
+	
+	\section{Bold font example}
+	
+		\textbf{\lipsum[1]}
+	
+	
+	\section{Italic bold font example}
+	
+		\textbf{\textit{\lipsum[1]}}
+		
+	
+	\section{Small capital font example}
+	
+		\textsc{\lipsum[1]}
+	
+
+\chapter{Language selection and typography}
+
+	%TODO
+
+%******end******
 \end{document}

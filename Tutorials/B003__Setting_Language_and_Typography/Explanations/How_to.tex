@@ -31,12 +31,12 @@
 % ---------
 
 % Information
-\title{Setting Language and Typography}
+\title[Font, Language and Typography]{Setting Font, Language and Typography}
 \author[A. Quenon]{Alexandre Quenon}
 
-% Main
+% Text
 \begin{document}
-%|---begin
+%******begin******
 
 
 % Title page
@@ -46,13 +46,13 @@
 
 
 \begin{frame}
-	\frametitle{}
+	\frametitle{Selecting the language}
 	
 	
 \end{frame}
 
 \begin{frame}
-	\frametitle{Accented letters}
+	\frametitle{Accented letters and font encoding}
 
 	For languages like French, for which accented letters are widely used, the \LaTeX{} user must be cautious:
 	\begin{itemize}
@@ -70,22 +70,65 @@
 				\item the font type must be provided as an optional argument,
 				\item \texttt{T1} is recommended for both English and French,
 			\end{itemize}
-			\item inputenc must be loaded before fontenc,
 		\end{itemize}
 		}
 		\item if \alert<2>{compiling with \textit{xelatex} or \textit{lualatex}},
 	\only<2>{%
 		\begin{itemize}
-			\item 
+			\item the \texttt{fontspec} package must be used to enable the rich font management,
+			\begin{itemize}
+				\item accented letters can be directly typewritten,
+				\item the font can be selected without using another package.
+			\end{itemize}
 		\end{itemize}
 	}
 	\end{itemize}
 \end{frame}
 
 
+\begin{frame}
+	\frametitle{Font selection}
+	
+	For clarity and readability, original or artistic fonts should be avoided.
+	A common font was \textit{Computer Modern}, modernised by the \textit{Latin Modern} font. However, both have been extensively used, so that some people consider them boring.
+	
+	Depending on the compiler:
+	\begin{itemize}
+		\item for \textit{latex} and \textit{pdflatex} compilation,
+		\begin{itemize}
+			\item selection is made by calling the corresponding package,
+			\item \textit{Latin Modern} is loaded by the \texttt{lmodern} package,
+		\end{itemize}
+		\item for \textit{xelatex} and \textit{lualatex} compilation,
+		\begin{itemize}
+			\item selection is performed through the \texttt{fontspec} package,
+			\item advanced options regarding the ligatures can be passed to the package.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Packages order}
+	
+	Summary of the packages which must be loaded, observing the following order:
+	\begin{itemize}
+		\item for \textit{latex} and \textit{pdflatex} compilation,
+		\begin{enumerate}
+			\item lmodern (or any other package relative to font selection),
+			\item inputenc,
+			\item fontenc,
+		\end{enumerate}
+		\item for \textit{xelatex} and \textit{lualatex} compilation,
+		\begin{enumerate}
+			\item fontspec.
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
 
   
 % Some references
 
-%|---end
+%******end******
 \end{document}
