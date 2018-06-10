@@ -14,7 +14,7 @@
 \usepackage{fontspec}
 \setmainfont{Latin Modern Roman}
 
-% Language
+% Language and typography
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
 \setotherlanguage{french}
@@ -49,6 +49,37 @@
 	\frametitle{}
 	
 	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Accented letters}
+
+	For languages like French, for which accented letters are widely used, the \LaTeX{} user must be cautious:
+	\begin{itemize}
+		\item if \alert<1>{compiling with \textit{latex} or \textit{pdflatex}},
+	\only<1>{%
+		\begin{itemize}
+			\item the \texttt{inputenc} package must be used to be able to typewrite direcly accented letters from the keyboard,
+			\begin{itemize}
+				\item with inputenc é and à are correct,
+				\item without the package the user must write \textbackslash'\{e\} and \textbackslash\`\ \{a\},
+				\item the encoding must be provided as an optional argument (utf8 is encouraged),
+			\end{itemize}
+			\item the \texttt{fontenc} package to enable the correct hyphenation rules depending on font encoding
+			\begin{itemize}
+				\item the font type must be provided as an optional argument,
+				\item \texttt{T1} is recommended for both English and French,
+			\end{itemize}
+			\item inputenc must be loaded before fontenc,
+		\end{itemize}
+		}
+		\item if \alert<2>{compiling with \textit{xelatex} or \textit{lualatex}},
+	\only<2>{%
+		\begin{itemize}
+			\item 
+		\end{itemize}
+	}
+	\end{itemize}
 \end{frame}
 
 
