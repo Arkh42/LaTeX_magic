@@ -29,6 +29,7 @@ where
 | Letter  | Description                              |        
 | :-----: | :--------------------------------------- | 
 |    B    | Mainly for beginners.                    | 
+|    C    | Classic subject: frequently asked.       |
 |    S    | Specialised subject: for advanced users. |
 
 
