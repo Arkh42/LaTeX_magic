@@ -19,6 +19,13 @@
 \setdefaultlanguage{english}
 \setotherlanguage{french}
 
+\usepackage{csquotes}
+
+% Floats
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multicol}
+
 
 %% Document
 % ---------
@@ -31,10 +38,12 @@
 \begin{document}
 %|---begin
 
+
 % Title page
 \begin{frame}
 	\titlepage
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Existing compilers}
@@ -48,38 +57,80 @@
 	\end{enumerate}
 \end{frame}
 
+
 \begin{frame}
 	\frametitle{A very short history}
 	
-	First steps:
+	To understand the reason why several compilers exist and how to choose one, a very short overview of the \TeX/\LaTeX{} history is presented:
 	\begin{enumerate}
-		\item \TeX{} (Donald Knuth), the original work;
-		\item \LaTeX{} (Leslie Lamport), a layer above \TeX{} which facilitates and standardises the use of \TeX{} (packages, classes, and so on).
+		\item \TeX{} (Donald Knuth), the original work, generating DVI files;
+		\item \LaTeX{} (Leslie Lamport), a layer above \TeX{} which facilitates and standardises the use of \TeX{} (packages, classes, and so on), still generating DVI files;
+		\item PDFTeX and PDFLaTeX (Hàn Thế Thành), which generate directly PDF files, allowing to embed several properties such as hyperlinks and metadata;
+		\item XeTeX and XeLaTeX, which improve/allow font use and characters management, required for other languages than English;
+		\item LuaTeX and LuaLaTeX, which are an attempt to extend the existing \TeX{} with the Lua programming language.
 	\end{enumerate}
-	Both generates DVI files.
-
-	With the evolution of IT, DVI files were slowly replaced by PDF files, which embed several properties such as hyperlinks and metadata: birth of \textit{pdftex} and \textit{pdflatex} (Hàn Thế Thành), which generate PDF files.
-	
-	Next step was the management of other languages with different characters and support of modern fonts: XeTeX.
-	On the other hand, an attempt to extend the existing  \TeX{} has been made with the Lua programming language: LuaTeX.
-	Of course, both exist with \LaTeX: XeLaTeX and LuaLaTeX.
 \end{frame}
 
+
 \begin{frame}
-	\frametitle{Differences?}
+	\frametitle{\TeX{} vs \LaTeX{}}
+	
+	Pro-\TeX{}:
+	\begin{itemize}
+		\item some people really like plain-\TeX{},
+		\item from my experience there are no \enquote{good/valid} arguments to do so.
+	\end{itemize}
+
+	Pro-\LaTeX{}:
+	\begin{itemize}
+		\item embed properties in the PDF files, which is important in a more and more digital world;
+		\item the last version of \LaTeX (i.e., \LaTeXe{}) is very stable and allows the use of classes and packages which are very useful to automate complex writing generation, such as mathematics.
+	\end{itemize}
+
+	There is a third option which will not be discussed: ConTeXt. The philosophy of ConTeXt is to provide a full-access to typography and document's layout to the user, while \LaTeX{}'s mindset consists in automating it through internal rules to let the user focus on the writing.
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Which compiler to choose}
+	\framesubtitle{Comparison of the compilers' features}
 	
 	\begin{table}
-		\caption{Comparison between \LaTeX{} compilers}
-		\begin{tabular}{*{3}{c}}
-			Compiler & Output &      Images      \\
-			 latex   &  dvi   &       .eps       \\
-			pdflatex &  pdf   & .png, .jpg, .pdf \\
-			lualatex &  pdf   & .png, .jpg, .pdf \\
-			xelatex  &  pdf   & .png, .jpg, .pdf
+		%\caption{Comparison between \LaTeX{} compilers}
+		\begin{tabular}{*{5}{c}} \toprule
+			&\multicolumn{4}{c}{Compilers} \\ \cmidrule(l){2-5}
+			Features	& LaTeX		& PDFLaTeX	& LuaLaTeX	& XeLaTeX	\\ \midrule
+			Output		& dvi		& pdf   	& pdf   	& pdf   	\\ 
+			Embed prop?	& no		& yes		& yes		& yes 		\\ 
+			Fonts   	& MetaFont	& MetaFont	& OpenType	& OpenType 	\\
+			Images		& eps		& png/jpg/pdf & png/jpg/pdf & png/jpg/pdf \\
+			Compiling	& short		& short		& long		& long		\\ \bottomrule
 		\end{tabular}
 	\end{table}
 \end{frame}
 
+
+\begin{frame}
+	\frametitle{Which compiler to choose}
+	\framesubtitle{Discussion built on my own experience}
+
+	Every comment here below is my opinion, even though I provide some arguments:
+	\begin{itemize}
+		\item the LaTeX compiler should not be used as many documents are published in a \textit{e}-format;
+		\item between PDFLaTeX, XeLaTeX and LuaLaTeX, a discussion is possible because
+		\begin{itemize}
+			\item PDFLaTeX is more stable and the compilation is performed faster;
+			\item XeLaTeX is intended for modern font management;
+			\item LuaLaTeX is still under development but has been claimed as the successor of PDFLaTeX.
+		\end{itemize}
+	\end{itemize}
+
+	I used to compile with PDFLaTeX. Now, I tend to compile with LuaLaTeX.
+	Whatever your choice is, try to not change it while writing a document because it could affect the packages in use.
+\end{frame}
+
+
+  
 % Some references
 % https://fr.sharelatex.com/learn/Choosing_a_LaTeX_Compiler
 % https://fr.sharelatex.com/blog/2012/12/01/the-tex-family-tree-latex-pdftex-xelatex-luatex-context.html
