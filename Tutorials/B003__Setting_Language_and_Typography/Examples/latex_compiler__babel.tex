@@ -1,0 +1,127 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[11pt, a4paper, english]{report}
+
+% Font
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Language and typography
+\usepackage[main=english, french]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+% Lorem Ipsum (for test purpose)
+\usepackage{lipsum}
+
+
+%% Document
+% ---------
+
+% Information
+\title{Setting Font, Language and Typography}
+\author{Alexandre Quenon}
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+\tableofcontents
+
+
+\chapter{Font selection examples}
+	
+	This chapter provides a quick overview of the available commands to modify the text font locally:
+	\begin{itemize}
+		\item normal,
+		\item slanted (rarely used),
+		\item italic,
+		\item bold,
+		\item italic bold,
+		\item small capitals.
+	\end{itemize}
+	
+	All examples are based on the Latin Modern Roman font family.
+	Text is generated thanks to the well-known \textit{Lorem Ipsum}.
+	
+	
+	\section{Normal font example}
+	
+	\lipsum[1]
+	
+	
+	\section{Slanted font example}
+	
+	\textsl{\lipsum[1]}
+	
+	
+	\section{Italic font example}
+	
+	\textit{\lipsum[1]}
+	
+	
+	\section{Bold font example}
+	
+	\textbf{\lipsum[1]}
+	
+	
+	\section{Italic bold font example}
+	
+	\textbf{\textit{\lipsum[1]}}
+	
+	
+	\section{Small capital font example}
+	
+	\textsc{\lipsum[1]}
+	
+
+\chapter{Language selection and typography}
+
+	
+	\section{Some English}
+	
+		A list in English, with some typographical rules which must be observed:
+		\begin{itemize}
+			\item item 1,
+			\item item 2, and
+			\item item $n$.
+		\end{itemize}
+	
+		In the previous example, one can see that the first paragraph is not indented; in addition, there are no white spaces before typographical symbols such as colons and semi-colons.
+		
+		Here is a use of the \texttt{csquotes} package in conjunction with \enquote{babel}. The English quotes are used. 
+
+
+	%\selectlanguage{french}%		Command
+	\begin{otherlanguage}{french}%	Environment
+	\section{Un peu de français}
+	
+		Une liste en français, comprenant les règles typographiques qui doivent être suivie:
+		\begin{itemize}
+			\item item 1;
+			\item item 2;
+			\item item $n$.
+		\end{itemize}
+		
+		Contrairement à une idée reçue très répandue, il n'y a pas d'interligne entre les paragraphes en français; par ailleurs, en français, une espace fine se place devant les symboles typographiques tels que les points-virgules.
+		
+		Remarque importante: contrairement à l'anglais, tous les paragraphes sont indentés en français; malheureusement, le language principal de ce document étant l'anglais, le package \textit{babel} ne respecte pas l'ensemble des règles typographiques.
+		
+		Voici un exemple d'utilisation du package \texttt{csquotes} en conjonction avec \enquote{babel}. L'usage des guillemets français, et des espaces, est respecté.
+	\end{otherlanguage}
+		
+
+	
+	
+%******end******
+\end{document}
