@@ -110,16 +110,8 @@
 		\item \texttt{babel}, which works with LaTeX, LuaLaTeX and XeLaTeX;
 		\item \texttt{polyglossia}, which was espacially made for XeLaTeX but also works for LuaLaTeX.
 	\end{enumerate}
-
-	It is possible to create multilingual documents:
-	\begin{itemize}
-		\item with \texttt{babel}
-		\begin{itemize}
-			\item languages are loaded with the package options,
-			\item the main language is specified with the \texttt{main=} identifiers in the options,
-			\item the user can locally change the language with the \texttt{selectlanguage} command or the \texttt{otherlanguage} environment
-		\end{itemize}
-	\end{itemize}
+	
+	Both packages work with the compilers related to the LaTeX engine described above. Pay attention that \texttt{polyglossia} relies on the \texttt{fontspec} package, so it does not compile with \textit{latex} nor \textit{pdflatex}.
 \end{frame}
 
 
@@ -141,6 +133,8 @@
 			\item \texttt{babel} commands are also available for compatibility.
 		\end{itemize}
 	\end{itemize}
+
+	Refer to the examples to see the use of commands and environments, depending on the compiler and the choice between \texttt{babel}/\texttt{polyglossia}.
 \end{frame}
 
 
@@ -154,10 +148,12 @@
 			\item lmodern (or any other package relative to font selection),
 			\item inputenc,
 			\item fontenc,
+			\item babel,
 		\end{enumerate}
 		\item for \textit{xelatex} and \textit{lualatex} compilation,
 		\begin{enumerate}
-			\item fontspec.
+			\item fontspec,
+			\item polyglossia (or babel).
 		\end{enumerate}
 	\end{itemize}
 \end{frame}
