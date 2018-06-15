@@ -5,7 +5,7 @@
 ## Organisation
 
 Each tutorial is contained in a folder which includes the following documents:
-* an 'Examples' folder which include several *.tex example files to provide reade-to-use LaTeX codes to the user,
+* an 'Examples' folder which include several *.tex example files to provide ready-to-use LaTeX codes to the user,
 * a 'Quick_reference.*' file which is the main part of the tutorial,
 *  a 'README.md' file which provides a short description of the content and references.
 
