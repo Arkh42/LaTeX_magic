@@ -46,12 +46,6 @@
 
 
 \begin{frame}
-	\frametitle{Selecting the language}
-	
-	
-\end{frame}
-
-\begin{frame}
 	\frametitle{Accented letters and font encoding}
 
 	For languages like French, for which accented letters are widely used, the \LaTeX{} user must be cautious:
@@ -103,6 +97,48 @@
 		\begin{itemize}
 			\item selection is performed through the \texttt{fontspec} package,
 			\item advanced options regarding the ligatures can be passed to the package.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Selecting the language}
+	
+	There are two efficient packages for selecting a language and load the typographical rules of the language:
+	\begin{enumerate}
+		\item \texttt{babel}, which works with LaTeX, LuaLaTeX and XeLaTeX;
+		\item \texttt{polyglossia}, which was espacially made for XeLaTeX but also works for LuaLaTeX.
+	\end{enumerate}
+
+	It is possible to create multilingual documents:
+	\begin{itemize}
+		\item with \texttt{babel}
+		\begin{itemize}
+			\item languages are loaded with the package options,
+			\item the main language is specified with the \texttt{main=} identifiers in the options,
+			\item the user can locally change the language with the \texttt{selectlanguage} command or the \texttt{otherlanguage} environment
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Multilingual documents}
+	
+	It is possible to create multilingual documents:
+	\begin{itemize}
+		\item with \texttt{babel}
+		\begin{itemize}
+			\item languages are loaded with the package options,
+			\item the main language is specified with the \texttt{main=} identifiers in the options,
+			\item the user can locally change the language with the \texttt{selectlanguage} command or the \texttt{otherlanguage} environment,
+		\end{itemize}
+		\item with \texttt{polyglossia}
+		\begin{itemize}
+			\item languages are loaded with specific commands in the preamble,
+			\item the user can locally change the language with the \texttt{(lang)} environment (e.g. \texttt{french}),
+			\item \texttt{babel} commands are also available for compatibility.
 		\end{itemize}
 	\end{itemize}
 \end{frame}

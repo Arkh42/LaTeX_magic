@@ -5,9 +5,11 @@
 \documentclass[11pt, a4paper, english]{report}
 
 % Font
-\usepackage{lmodern}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
 
 % Language and typography
 \usepackage[main=english, french]{babel}
@@ -36,7 +38,7 @@
 
 
 \chapter{Font selection examples}
-	
+
 	This chapter provides a quick overview of the available commands to modify the text font locally:
 	\begin{itemize}
 		\item normal,
@@ -46,60 +48,57 @@
 		\item italic bold,
 		\item small capitals.
 	\end{itemize}
-	
+
 	All examples are based on the Latin Modern Roman font family.
 	Text is generated thanks to the well-known \textit{Lorem Ipsum}.
-	
-	
+
+
 	\section{Normal font example}
 	
-	\lipsum[1]
-	
+		\lipsum[1]
+		
 	
 	\section{Slanted font example}
 	
-	\textsl{\lipsum[1]}
+		\textsl{\lipsum[1]}
 	
 	
 	\section{Italic font example}
 	
-	\textit{\lipsum[1]}
-	
+		\textit{\lipsum[1]}
+		
 	
 	\section{Bold font example}
 	
-	\textbf{\lipsum[1]}
+		\textbf{\lipsum[1]}
 	
 	
 	\section{Italic bold font example}
 	
-	\textbf{\textit{\lipsum[1]}}
-	
+		\textbf{\textit{\lipsum[1]}}
+		
 	
 	\section{Small capital font example}
 	
-	\textsc{\lipsum[1]}
+		\textsc{\lipsum[1]}
 	
 
 \chapter{Language selection and typography}
 
-	
-	\section{Some English}
-	
-		A list in English, with some typographical rules which must be observed:
-		\begin{itemize}
-			\item item 1,
-			\item item 2, and
-			\item item $n$.
-		\end{itemize}
-	
-		In the previous example, one can see that the first paragraph is not indented; in addition, there are no white spaces before typographical symbols such as colons and semi-colons.
+	A list in English, with some typographical rules which must be observed:
+	\begin{itemize}
+		\item item 1,
+		\item item 2, and
+		\item item $n$.
+	\end{itemize}
 
-
+	In the previous example, one can see that the first paragraph is not indented; in addition, there are no white spaces before typographical symbols such as colons and semi-colons.
+	
+	
 	%\selectlanguage{french}%		Command
 	\begin{otherlanguage}{french}%	Environment
-	\section{Un peu de français}
-	
+		\section{Un peu de français}
+		
 		Une liste en français, comprenant les règles typographiques qui doivent être suivie:
 		\begin{itemize}
 			\item item 1;
@@ -111,9 +110,6 @@
 		
 		Remarque importante: contrairement à l'anglais, tous les paragraphes sont indentés en français; malheureusement, le language principal de ce document étant l'anglais, le package \textit{babel} ne respecte pas l'ensemble des règles typographiques.
 	\end{otherlanguage}
-		
 
-	
-	
 %******end******
 \end{document}
