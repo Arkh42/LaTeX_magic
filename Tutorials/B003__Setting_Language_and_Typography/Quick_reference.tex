@@ -139,6 +139,23 @@
 
 
 \begin{frame}
+	\frametitle{Quotations}
+	
+	A powerful package for quoting text is \texttt{csquotes}.
+	It provides:
+	\begin{itemize}
+		\item the \texttt{enquote} command to quote a text according to the defined language,
+		\item the \texttt{foreignquote} command which combines \texttt{enquote} and \texttt{foreignlanguage} from babel/polyglossia,
+		\item the \texttt{textquote} command for formal quoting (i.e. with reference citation),
+		\item the \texttt{textcquote} for formal quoting interfaced with bibliography management packages\footnote{Concerned packages are natbib, jurabib and biblatex.}.
+	\end{itemize}
+
+	The package is originally intended for working in conjunction with \texttt{babel}.
+	However, it generally works with \texttt{polyglossia}, even though I faced strange behaviours with XeLaTeX in French.
+\end{frame}
+
+
+\begin{frame}
 	\frametitle{Packages order}
 	
 	Summary of the packages which must be loaded, observing the following order:
@@ -149,11 +166,13 @@
 			\item inputenc,
 			\item fontenc,
 			\item babel,
+			\item csquotes,
 		\end{enumerate}
 		\item for \textit{xelatex} and \textit{lualatex} compilation,
 		\begin{enumerate}
 			\item fontspec,
-			\item polyglossia (or babel).
+			\item polyglossia (or babel),
+			\item csquotes.
 		\end{enumerate}
 	\end{itemize}
 \end{frame}

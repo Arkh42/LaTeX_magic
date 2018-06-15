@@ -8,13 +8,14 @@ User's attention must be drawn on the fact that **the setting is compiler-depend
 
 ## References
 
-From CTAN (package documentation):
+From CTAN:
 * the [inputenc](https://ctan.org/pkg/inputenc) package,
 * the [fontenc](https://ctan.org/pkg/fontenc) package,
 * a document about [LaTeX font encodings](https://ctan.math.illinois.edu/macros/latex/doc/encguide.pdf),
 * the [fontspec](https://ctan.org/pkg/fontspec) package,
 * the [babel](https://ctan.org/pkg/babel) package,
-* the [polyglossia](https://ctan.org/pkg/polyglossia) package.
+* the [polyglossia](https://ctan.org/pkg/polyglossia) package,
+* the [csquotes](https://ctan.org/pkg/csquotes) package.
 
 Tutorials from the internet:
 * [Mais à quoi bon servent les packages ‘fontenc’ et ‘inputenc’ ?](http://blog.dorian-depriester.fr/latex/mais-a-quoi-bon-servent-les-packages-fontenc-et-inputenc),

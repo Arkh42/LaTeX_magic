@@ -16,6 +16,8 @@
 \setdefaultlanguage[variant=british]{english}
 \setotherlanguage{french}
 
+\usepackage[autostyle=true]{csquotes}
+
 % Hyperref
 \usepackage[hidelinks]{hyperref}
 
@@ -96,6 +98,8 @@
 	
 	In the previous example, one can see that the first paragraph is not indented; in addition, there are no white spaces before typographical symbols such as colons and semi-colons.
 	
+	Here is a use of the \texttt{csquotes} package in conjunction with \enquote{babel}. The English quotes are used. 
+	
 	
 	%\selectlanguage{french}%		Command
 	\begin{french}%	Environment
@@ -110,7 +114,9 @@
 		
 		Contrairement à une idée reçue très répandue, il n'y a pas d'interligne entre les paragraphes en français; par ailleurs, en français, une espace fine se place devant les symboles typographiques tels que les points-virgules et les deux-points.
 		
-		Remarque importante: \textit{polyglossia} semble légèrement plus performant que \textit{babel} puisque l'indentation du premier paragraphe est respectée. Par contre, aucun des deux ne respectent l'utilisation de tirets <<normaux>>.
+		Remarque importante: \textit{polyglossia} semble légèrement plus performant que \textit{babel} puisque l'indentation du premier paragraphe est respectée. Par contre, aucun des deux ne respectent l'utilisation de tirets.
+		
+		Voici un exemple d'utilisation du package \texttt{csquotes} en conjonction avec \enquote{polyglossia}. L'usage des guillemets français, et des espaces, est respecté.
 	\end{french}
 
 %******end******

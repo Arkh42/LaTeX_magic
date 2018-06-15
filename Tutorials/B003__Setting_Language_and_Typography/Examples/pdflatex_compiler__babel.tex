@@ -12,6 +12,8 @@
 % Language and typography
 \usepackage[main=english, french]{babel}
 
+\usepackage[autostyle=true]{csquotes}
+
 % Hyperref
 \usepackage[hidelinks]{hyperref}
 
@@ -94,6 +96,8 @@
 		\end{itemize}
 	
 		In the previous example, one can see that the first paragraph is not indented; in addition, there are no white spaces before typographical symbols such as colons and semi-colons.
+		
+		Here is a use of the \texttt{csquotes} package in conjunction with \enquote{babel}. The English quotes are used. 
 
 
 	%\selectlanguage{french}%		Command
@@ -110,6 +114,8 @@
 		Contrairement à une idée reçue très répandue, il n'y a pas d'interligne entre les paragraphes en français; par ailleurs, en français, une espace fine se place devant les symboles typographiques tels que les points-virgules et les deux-points.
 		
 		Remarque importante: contrairement à l'anglais, tous les paragraphes sont indentés en français; malheureusement, le language principal de ce document étant l'anglais, le package \textit{babel} ne respecte pas l'ensemble des règles typographiques.
+		
+		Voici un exemple d'utilisation du package \texttt{csquotes} en conjonction avec \enquote{babel}. L'usage des guillemets français, et des espaces, est respecté.
 	\end{otherlanguage}
 		
 
