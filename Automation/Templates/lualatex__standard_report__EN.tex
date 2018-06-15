@@ -1,0 +1,71 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[11pt, a4paper]{report}
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\setotherlanguage{french}
+
+\usepackage[autostyle=true]{csquotes}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+
+
+%% Document
+% ---------
+
+% Information
+\title{Title of the document}
+\author{Firstname1 Lastname1 \and Firstname2 Lastname2 \and Firstname3 Lastname3}
+\date{\today}
+
+% Text
+\begin{document}
+%******begin******
+
+
+\maketitle
+
+\tableofcontents
+
+
+\chapter{A chapter}
+
+	Some text.
+
+
+	\section{A section}
+	
+		Some text.
+		
+		
+		\subsection{A subsection}
+		
+			Some text.
+			
+			
+			\subsubsection{A subsubsection}
+			
+				If really needed.
+
+
+
+\chapter{Another chapter}
+
+	Some text.
+	
+
+%******end******
+\end{document}
