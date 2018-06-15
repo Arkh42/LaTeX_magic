@@ -15,6 +15,7 @@ The repository shall be organised as follow:
 * Automation
 	* Classes
 	* Packages
+	* Templates
 * Tutorials
 
 The *Automation* folder aims the automation of LaTeX in order to improve the usability for newbies.
