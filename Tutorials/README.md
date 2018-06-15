@@ -4,12 +4,10 @@
 
 ## Organisation
 
-Each tutorial is contained in a folder which includes the following folders:
-* Examples
-* Explanations
-
-In addition, a "README.md" file, located at the tutorial's root level, must provide a short description 
-of the content.
+Each tutorial is contained in a folder which includes the following documents:
+* an 'Examples' folder which include several *.tex example files to provide reade-to-use LaTeX codes to the user,
+* a 'Quick_reference.*' file which is the main part of the tutorial,
+*  a 'README.md' file which provides a short description of the content and references.
 
 ### Contents
 
@@ -29,7 +27,7 @@ of the content.
 * TD =	to do.
 
 
-## Rules
+## Rules for contribution
 
 
 ### How to name a tutorial
@@ -39,7 +37,7 @@ The folder including the whole tutorial must be named according to the following
 where
 * *X* is a letter indicating the target audience (see table below),
 * *yyy* is a number (starting from 001) for indexing the tutorial,
-* *short_description* is a short name describing the subject of the tutorials
+* *short_description* is a short title describing the subject of the tutorials
 (single underscores must be used between each word).
 
 | Letter  | Description                              |        
