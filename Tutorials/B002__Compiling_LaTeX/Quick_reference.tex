@@ -104,7 +104,8 @@
 			Embed prop?	& no		& yes		& yes		& yes 		\\ 
 			Fonts   	& MetaFont	& MetaFont	& OpenType	& OpenType 	\\
 			Images		& eps		& png/jpg/pdf & png/jpg/pdf & png/jpg/pdf \\
-			Compiling	& short		& short		& long		& long		\\ \bottomrule
+			Compiling	& short		& short		& long		& long		\\
+			Microtype	& low		& high		& high		& low		\\ \bottomrule
 		\end{tabular}
 	\end{table}
 \end{frame}
@@ -120,7 +121,7 @@
 		\item between PDFLaTeX, XeLaTeX and LuaLaTeX, a discussion is possible because
 		\begin{itemize}
 			\item PDFLaTeX is more stable and the compilation is performed faster;
-			\item XeLaTeX is intended for modern font management;
+			\item XeLaTeX is intended for modern font management but has a lower integration of \texttt{microtype} (cf. tutorial B003);
 			\item LuaLaTeX is still under development but has been claimed as the successor of PDFLaTeX.
 		\end{itemize}
 	\end{itemize}

@@ -15,7 +15,8 @@ From CTAN:
 * the [fontspec](https://ctan.org/pkg/fontspec) package,
 * the [babel](https://ctan.org/pkg/babel) package,
 * the [polyglossia](https://ctan.org/pkg/polyglossia) package,
-* the [csquotes](https://ctan.org/pkg/csquotes) package.
+* the [csquotes](https://ctan.org/pkg/csquotes) package,
+* the [microtype](https://www.ctan.org/pkg/microtype) package.
 
 Tutorials from the internet:
 * [Mais à quoi bon servent les packages ‘fontenc’ et ‘inputenc’ ?](http://blog.dorian-depriester.fr/latex/mais-a-quoi-bon-servent-les-packages-fontenc-et-inputenc),

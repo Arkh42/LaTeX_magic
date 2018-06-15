@@ -21,6 +21,8 @@
 
 \usepackage{csquotes}
 
+\usepackage{microtype}
+
 % Floats
 \usepackage{float}
 \usepackage{booktabs}
@@ -156,6 +158,22 @@
 
 
 \begin{frame}
+	\frametitle{Enhanced documents with micro-typography}
+	
+	Micro-typography is a set of techniques which allow to enhance the aspect of a text by reducing the potential sources of disturbance for the reader.
+	It includes:
+	\begin{itemize}
+		\item character protrusion (a.k.a. margin kerning), which consists in adjusting the characters at the margins of a typeset text for optical alignment;
+		\item font expansion which is the method to use a wider or narrower variant of a font to make interword spacing more even;
+		\item tracking (letterspacing).
+	\end{itemize}
+
+	The effects of \texttt{microtype} are compiler-dependent.
+	In summary, the compilers which make the highest benefits from it are PDFLaTeX and LuaLaTeX.
+\end{frame}
+
+
+\begin{frame}
 	\frametitle{Packages order}
 	
 	Summary of the packages which must be loaded, observing the following order:
@@ -167,12 +185,14 @@
 			\item fontenc,
 			\item babel,
 			\item csquotes,
+			\item microtype,
 		\end{enumerate}
 		\item for \textit{xelatex} and \textit{lualatex} compilation,
 		\begin{enumerate}
 			\item fontspec,
 			\item polyglossia (or babel),
-			\item csquotes.
+			\item csquotes,
+			\item microtype.
 		\end{enumerate}
 	\end{itemize}
 \end{frame}
