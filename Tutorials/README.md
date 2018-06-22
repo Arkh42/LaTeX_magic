@@ -22,7 +22,7 @@ Each tutorial is contained in a folder which includes the following documents:
 |  Cxxx   | Floats							| Floats management, *sub*-environments, advanced tables.				| TD		|
 |  Cxxx   | Mathematics						| Main environments, theorems.											| TD		|
 
-*Legend*
+*Legend*:
 
 * V = 	done,
 * TD =	to do,
@@ -38,7 +38,7 @@ The folder including the whole tutorial must be named according to the following
 *Xyyy__short_description*,
 where
 * *X* is a letter indicating the target audience (see table below),
-* *yyy* is a number (starting from 000) for indexing the tutorial,
+* *yyy* is a number starting from 000 for indexing the tutorial (see table below),
 * *short_description* is a short title describing the subject of the tutorials
 (single underscores must be used between each word).
 
@@ -47,6 +47,15 @@ where
 |    B    | Mainly for beginners.                    | 
 |    C    | Classic subject: frequently asked.       |
 |    S    | Specialised subject: for advanced users. |
+
+| 1st digit | Description                           |        
+| :-------: | :-------------------------------------| 
+| 	  0		| Usual/Generic topic.					| 
+|	  1		| Scientific topic.					    |
+
+Here are a few examples:
+* subjects indexed as "B0yy" are general topics for beginners,
+* tutorials indexed as "C1yy" focus on scientific topics that are commonly required.
 
 
 ### How to write the explanations inside a tutorial
