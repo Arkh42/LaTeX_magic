@@ -13,6 +13,7 @@ Each tutorial is contained in a folder which includes the following documents:
 
 | Index   | Title                           | Short description														| Status	|    
 | :-----: | :------------------------------ | :-------------------------------------------------------------------- | :-----:	|
+|  B000   | Adopting LaTeX					| Some answers to "Why should we (not) use LaTeX?"						| TD		|
 |  B001   | Installing LaTeX				| Distributions, editors, advices.										| ...		|
 |  B002   | Compiling LaTeX					| Existing compilers, features, choice.									| V			|
 |  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| V			|
@@ -37,7 +38,7 @@ The folder including the whole tutorial must be named according to the following
 *Xyyy__short_description*,
 where
 * *X* is a letter indicating the target audience (see table below),
-* *yyy* is a number (starting from 001) for indexing the tutorial,
+* *yyy* is a number (starting from 000) for indexing the tutorial,
 * *short_description* is a short title describing the subject of the tutorials
 (single underscores must be used between each word).
 
