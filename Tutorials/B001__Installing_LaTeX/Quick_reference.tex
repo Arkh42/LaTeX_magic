@@ -1,0 +1,150 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+% Document class
+\documentclass[11pt]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+% Language
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+
+\usepackage[autostyle=true]{csquotes}
+
+% Floats
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+% Information
+\title{Installing \LaTeX}
+\subtitle{Distributions and editors}
+\author[A. Quenon]{Alexandre Quenon}
+
+% Text
+\begin{document}
+% *** Title page *** %
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+% *** Tutorial *** %
+\begin{frame}
+	\frametitle{\LaTeX-related software}
+	
+	To write a document with \LaTeX{}, the user must install specific programs, as for any other text editor.
+	These are:
+	\begin{itemize}
+		\item a distribution,
+		\item an editor.
+	\end{itemize}
+
+	The \LaTeX{} distribution contains all tools necessary to generate a document (usually a PDF) from the \enquote{code}.
+	The editor is a program which simplifies the \LaTeX{} writing by providing shortcuts for compilation (cf. next tutorial) and shortcuts for text styling (e.g., \texttt{CTRL+B} creates bold text).
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Which distribution to choose}
+	\framesubtitle{Comparison of LaTeX distributions based on OS compatibility}
+	
+	\begin{table}
+		\begin{tabular}{*{4}{c}} \toprule
+			&\multicolumn{3}{c}{Distributions} \\ \cmidrule(l){2-4}
+			OS			& \TeX{} Live	& MiK\TeX{}	& Mac\TeX{}	\\ \midrule
+			Windows		& 	yes			& 	yes   	& 	pdf   	\\ 
+			Linux		& 	yes			& 	yes		& 	yes		\\ 
+			MacOS   	& 	no			& 	yes		& 	yes	 	\\ \bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Which distribution to choose}
+	\framesubtitle{Feedback from my own experience}
+	
+	As I have used both Windows and Linux (mainly CentOS) operating systems but never Mac, I cannot provide any feedback about \alert{Mac\TeX{}}. Sorry for Mac users\dots
+	
+	However, I have used extensively \alert{MiK\TeX{}} (on Windows only) and \alert{\TeX{} Live} (both Linux and Windows):
+	\begin{itemize}
+		\item I faced problems for using some packages or compilers with MiK\TeX{} that were not existing with \TeX{} Live such as
+		\begin{itemize}
+			\item compilation issues when using LuaLaTeX (cf. tutorial B002),
+			\item \texttt{biber} engine not recognised while I was using the \texttt{biblatex} package,
+		\end{itemize}
+		\item this is what I experienced
+		\begin{itemize}
+			\item I compared up-to-date versions,
+			\item I did it a few years ago so it could have changed since the comparison was done,
+		\end{itemize}
+		\item I \textbf{recommend} the use of \textbf{\TeX{} Live}.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Which editor to choose}
+	\framesubtitle{Comparison of LaTeX editors based on OS compatibility}
+	
+	\begin{table}
+		\begin{tabular}{*{4}{c}} \toprule
+			&\multicolumn{3}{c}{Distributions} \\ \cmidrule(l){2-4}
+			OS			& \TeX{}studio	& \TeX{}maker	& \TeX{}nicCenter	\\ \midrule
+			Windows		& 	yes			& 	yes   		& 	yes   	\\ 
+			Linux		& 	yes			& 	yes			& 	no		\\ 
+			MacOS   	& 	yes			& 	yes			& 	no	 	\\ \bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Which editor to choose}
+	\framesubtitle{Feedback from my own experience}
+	
+	As I have used both \TeX{}maker and \TeX{}studio but \alert{\TeX{}nicCenter}.
+	Sorry that I cannot provide any feedback about it\dots
+	
+	I have used a lot \alert{\TeX{}maker} (on Windows only) then I switched to  \alert{\TeX{}studio} (both Linux and Windows) because to my opinion:
+	\begin{itemize}
+		\item the tool was more \enquote{clever} considering the key management (references, bibliography),
+		\item it proposes automatic alignment in \texttt{tabular} environments (even though this is not working when the \texttt{multicolumn} command is used).
+	\end{itemize}
+	However, for those who like a fine control, e.g. for compilation, \TeX{}maker is providing a more visible interface.
+	
+	Anyway, the editor is a matter of taste. So try some and do not hesitate to change and to compare them to find yours.
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Installation process}
+	
+	%TODO
+\end{frame}
+
+  
+% *** References *** %
+\end{document}

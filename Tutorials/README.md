@@ -13,9 +13,9 @@ Each tutorial is contained in a folder which includes the following documents:
 
 | Index   | Title                           | Short description														| Status	|    
 | :-----: | :------------------------------ | :-------------------------------------------------------------------- | :-----:	|
-|  B001   | Installing LaTeX				| Distributions, editors, advices.										| TD		|
+|  B001   | Installing LaTeX				| Distributions, editors, advices.										| ...		|
 |  B002   | Compiling LaTeX					| Existing compilers, features, choice.									| V			|
-|  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| ...		|
+|  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| V			|
 |  B004   | Choosing Document Class			| Existing document classes, features, choice.							| TD		|
 |  Cxxx   | References						| Clickable table of contents, references to anything (e.g., figures).	| TD		|
 |  Cxxx   | Floats							| Floats management, *sub*-environments, advanced tables.				| TD		|
