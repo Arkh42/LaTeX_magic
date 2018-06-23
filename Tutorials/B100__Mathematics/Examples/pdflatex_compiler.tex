@@ -19,8 +19,12 @@
 
 \usepackage[babel=true]{microtype}
 
+% Mathematics
+\usepackage{mathtools}
+
 % Hyperref
 \usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
 
 
 %              %
@@ -41,9 +45,73 @@
 \tableofcontents
 
 
-\chapter{TODO}
+\chapter{The \enquote{mathtools} package}
 
-	%TODO
-
-
+	Mathematics writing is one of the most advantage of \LaTeX{} compared to common text editors.
+	On a first approach, it looks like a programming language but it is in fact quite intuitive.
+	
+	The first package which was extremely useful in mathematics writing was \texttt{amsmath}.
+	Since then, it has been upgraded by the \texttt{mathtools} package that I recommend to use.
+	
+	
+	\section{Writing an equation}
+	
+		Writing an equation is simply done thanks to the \texttt{equation} environment.
+		Maxwell's equations will be used as examples:
+		\begin{equation}
+		\vec{\nabla}\cdot\vec{B}=0.
+		\end{equation}
+		
+		
+		\subsection{Unnumbered equations}
+		
+			Automatic numbering can be avoided by using the starred version: \texttt{equation*}.
+			For instance:
+			\begin{equation*}
+			\vec{\nabla}\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}.
+			\end{equation*}
+			Nevertheless, it is generally recommended to number all equations in scientific documents for easier reference.
+			
+			Shorter forms of the unnumbered version are offered by the package: the \textbackslash [ \ldots \textbackslash ] wrapper or the double \$\$ symbol.
+			Please note that the latter is plain \TeX{}, which means that it should not be used with LaTeX because it is not robust.
+			
+			Here follow the corresponding examples:
+			$$ \iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S}, $$
+			\[ \oint_{C} \vec{E} \cdot \mathrm{d}\vec{l} = - \iint_{S} \frac{\partial\vec{B}}{\partial t} \cdot \mathrm{d}\vec{S}. \]
+			However, I do not recommend to use them. 
+			On the one hand, the \texttt{equation*} environment highlights the mathematics when looking in the \LaTeX{} code.
+			On the other hand, if the author changes his mind and wants to number the equation, he must simply remove the \texttt{*} character.
+		
+		
+		\subsection{Inline equations}
+		
+			Inline equations are equations written in the text.
+			It can be useful in some circumstances, such as the description of a variable.
+			For instance, I could specify that $\vec{B}$ in \cref{eq::Maxwell:no_magnetic_monopole} is the magnetic field.
+			
+			Unfortunately, inline equations may introduce unpleasant distortion in the text, especially with \enquote{big} symbols.
+			As an example, let us use express the acceleration as the derivative of the speed:
+			$a=\frac{\mathrm{d}v}{\mathrm{d}t}$.
+			It can be seen that the fraction symbol has been compacted to fit with the line space.
+			
+			It is possible to prevent the fraction from being reshaped by forcing the \textit{math}-mode.
+			To do so, the writer must use the \texttt{displaystyle} command, which exists in shorter forms for common mathematical symbols such as fraction.
+			Expressing again the acceleration:
+			$a=\dfrac{\mathrm{d}v}{\mathrm{d}t}$, or, equivalently,
+			$\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$.
+			It can be seen that the space line is increased above and below the line including the equation, creating a somewhat uncomfortable text arrangement.
+			
+			
+		\subsection{General recommendations for mathematics typewriting}
+			
+			Recommendations:
+			\begin{itemize}
+				\item use numbered equation only (with the \texttt{equation} environment),
+				\item try to avoid inline equations except
+				\begin{itemize}
+					\item to describe variables or operators,
+					\item for very small, less important formulae which do not contain \enquote{big} symbols (e.g., integral, fraction).
+				\end{itemize}
+			\end{itemize}
+%
 \end{document}

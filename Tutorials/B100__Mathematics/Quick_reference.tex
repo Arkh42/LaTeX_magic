@@ -26,10 +26,16 @@
 
 \usepackage{microtype}
 
+% Mathematics
+\usepackage{mathtools}
+
 % Floats
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{multicol}
+
+% References
+\usepackage{cleveref}
 
 
 %              %
@@ -50,13 +56,69 @@
 \end{frame}
 
 
+% *** Tutorial *** %
 \begin{frame}
-	\frametitle{TODO}
+	\frametitle{Packages for mathematics}
 
-	
+	Some packages very useful for mathematics are listed here below:
+	\begin{itemize}
+		\item \texttt{mathtools} which is mainly an upgrade of the very well-known \texttt{amsmath} package.
+	\end{itemize}
 \end{frame}
 
 
-  
+\begin{frame}
+	\frametitle{Equations}
+	
+	The main LaTeX environment to write an equation is\dots{} \texttt{equation}.
+	As an example:
+	\begin{equation}
+		\vec{\nabla}\cdot\vec{B}=0
+		\label{eq::Maxwell:no_magnetic_monopole}
+	\end{equation}
+	
+	The starred version disables numbering:
+	\begin{equation*}
+		\vec{\nabla}\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}
+	\end{equation*}
+	
+	There are also shorter forms thanks to:
+	\begin{itemize}
+		\item the \textbackslash [ \ldots \textbackslash ] wrapper surrounding the equation,
+		\item the double \$\$ symbol surrounding the equation (plain \TeX{}, deprecated, should not be used).
+	\end{itemize}
+	However, I recommend the use of the \texttt{equation} environment because it highlights the mathematics in the \LaTeX{} code and for its versatility between the numbered and the unnumbered version.
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Inline equations}
+	
+	It is sometimes useful to write mathematics inside a text, for instance to describe the variable $\vec{B}$ appearing in \cref{eq::Maxwell:no_magnetic_monopole}.
+	To do so, the mathematical formula must be wrapped by single \$ signs.
+	
+	Recommendation: try to not abuse of inline equations because they
+	\begin{itemize}
+		\item can be difficult to read in the text,
+		\item could \enquote{ruin} the line space,
+		\item cannot be numbered so it is not possible to refer to them.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Package options for layout modification}
+
+	It is possible to change the layout of equations thanks to package options:
+	\begin{itemize}
+		\item position of equation numbers
+		\begin{itemize}
+			\item on the right (default) with the \texttt{reqno} option,
+			\item on the left with the \texttt{leqno} option.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
 % *** References *** %
 \end{document}
