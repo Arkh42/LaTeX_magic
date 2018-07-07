@@ -1,0 +1,76 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+% Document class
+\documentclass[11pt, a4paper]{book}
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\setotherlanguage{french}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage{microtype}
+
+% Mathematics
+\usepackage{mathtools}
+
+% Code inclusion
+\usepackage{listings}
+\lstset{tabsize=4}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+% Information
+\title{The \LaTeX{} mini-guide}
+\author{Alexandre Quenon}
+\date{\today}
+
+% Text
+\begin{document}
+%
+% *** Front matter *** %
+\frontmatter
+
+\maketitle
+
+\tableofcontents
+
+
+% *** Document structure *** %
+\mainmatter
+\part{\LaTeX{} for beginners}
+
+
+\part{\LaTeX{} for common users}
+
+	\include{B100__Mathematics/Mini_guide__mathtools}
+
+
+\part{\LaTeX{} for advanced users}
+	
+
+\backmatter
+%
+\end{document}

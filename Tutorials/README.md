@@ -7,7 +7,8 @@
 Each tutorial is contained in a folder which includes the following documents:
 * an 'Examples' folder which include several *.tex example files to provide ready-to-use LaTeX codes to the user,
 * a 'Quick_reference.*' file which is the main part of the tutorial,
-*  a 'README.md' file which provides a short description of the content and references.
+* one or several 'Mini_guide*' files that provide a complete description,
+* a 'README.md' file which provides a short description of the content and references.
 
 ### Contents
 
@@ -28,6 +29,16 @@ Each tutorial is contained in a folder which includes the following documents:
 * V = 	done,
 * TD =	to do,
 * ... = ongoing.
+
+### Mini-guide VS Quick reference
+
+Quick references included in each tutorial aim to provide quickly useful information to the reader.
+"Quickly" means that a short number of slides are sufficient to understand the topic and to start writing LaTeX.
+Quick references are supported by examples including a compilable LaTeX code that helps the user to handle the subject of the tutorial.
+
+However, some readers do prefer a complete text.
+To do so, a 'The_LaTeX_mini_guide.tex' file is being written to provide a full tutorial grouping all topics.
+This complete tutorial is fed on 'Mini_guide*' files that are available in their related tutorial folder.
 
 
 ## Rules for contribution
