@@ -19,6 +19,7 @@ Each tutorial is contained in a folder which includes the following documents:
 |  B002   | Compiling LaTeX					| Existing compilers, features, choice.									| V			|
 |  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| V			|
 |  B004   | Choosing Document Class			| Existing document classes, features, choice.							| TD		|
+|  B005   | LaTeX Vocabulary				| Preamble & document, package & class, commands and environments.		| TD		|
 |  B100   | Mathematics						| Main environments for equations and systems.							| ...		|
 |  Xyyy   | References						| Clickable table of contents, references to anything (e.g., figures).	| TD		|
 |  Xyyy   | Floats							| Floats management, *sub*-environments, advanced tables.				| TD		|
