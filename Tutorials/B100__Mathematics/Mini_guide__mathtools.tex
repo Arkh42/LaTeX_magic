@@ -35,9 +35,17 @@ Since then, it has been upgraded by the \texttt{mathtools} package that I recomm
 	\subsection{Unnumbered equations}
 	
 		Automatic numbering can be avoided by using the starred version: \texttt{equation*}.
-		For instance:
+		For instance,
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{equation*}
+	\vec{\nabla}\times\vec{E}
+		=-\frac{\partial\vec{B}}{\partial t}.
+\end{equation*}
+\end{lstlisting}	
+produces
 		\begin{equation*}
-			\vec{\nabla}\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}.
+			\vec{\nabla}\times\vec{E}
+				=-\frac{\partial\vec{B}}{\partial t}.
 		\end{equation*}
 		Nevertheless, it is generally recommended to number all equations in scientific documents for easier reference.
 		
@@ -45,8 +53,21 @@ Since then, it has been upgraded by the \texttt{mathtools} package that I recomm
 		Please note that the latter is plain \TeX{}, which means that it should not be used with LaTeX because it is not robust.
 		
 		Here follow the corresponding examples:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$$\iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S},$$
+\end{lstlisting}
+		is the code corresponding to
 		$$ \iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S}, $$
-		\[ \oint_{C} \vec{E} \cdot \mathrm{d}\vec{l} = - \iint_{S} \frac{\partial\vec{B}}{\partial t} \cdot \mathrm{d}\vec{S}. \]
+		while
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\[ \oint_{C} \vec{E} \cdot \mathrm{d}\vec{l}
+	= - \iint_{S} \frac{\partial\vec{B}}{\partial t}
+	  \cdot \mathrm{d}\vec{S}. \]
+\end{lstlisting}
+		creates
+		\[ \oint_{C} \vec{E} \cdot \mathrm{d}\vec{l}
+			= - \iint_{S} \frac{\partial\vec{B}}{\partial t}
+			  \cdot \mathrm{d}\vec{S}. \]
 		However, I do not recommend to use them. 
 		On the one hand, the \texttt{equation*} environment highlights the mathematics when looking in the \LaTeX{} code.
 		On the other hand, if the author changes his mind and wants to number the equation, he must simply remove the \texttt{*} character.
