@@ -5,7 +5,7 @@
 %             %
 
 
-\chapter{The \enquote{mathtools} package}
+\chapter{Mathematics -- The \enquote{mathtools} package}
 
 Mathematics writing is one of the most advantage of \LaTeX{} compared to common text editors.
 On a first approach, it looks like a programming language but it is in fact quite intuitive.
@@ -78,6 +78,10 @@ $$\iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S},$$
 		Inline equations are equations written in the text.
 		It can be useful in some circumstances, such as the description of a variable.
 		For instance, I could specify that $\vec{B}$ in \cref{eq::Maxwell:no_magnetic_monopole} is the magnetic field.
+		To do so, the equation is surrounded by single \$ signs:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$\vec{B}$
+\end{lstlisting}
 		
 		Unfortunately, inline equations may introduce unpleasant distortion in the text, especially with \enquote{big} symbols.
 		As an example, let us use express the acceleration as the derivative of the speed:
@@ -85,14 +89,25 @@ $$\iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S},$$
 		It can be seen that the fraction symbol has been compacted to fit with the line space.
 		
 		It is possible to prevent the fraction from being reshaped by forcing the \textit{math}-mode.
-		To do so, the writer must use the \texttt{displaystyle} command, which exists in shorter forms for common mathematical symbols such as fraction.
+		To do so, the writer must use the \texttt{displaystyle} command, which exists in shorter forms for common mathematical symbols such as fractions.
 		Expressing again the acceleration:
 		$a=\dfrac{\mathrm{d}v}{\mathrm{d}t}$, or, equivalently,
 		$\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$.
 		It can be seen that the space line is increased above and below the line including the equation, creating a somewhat uncomfortable text arrangement.
 		
+		The problem presented here above is related to the following \LaTeX{} codes:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$a=\frac{\mathrm{d}v}{\mathrm{d}t}$
+\end{lstlisting}
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$a=\dfrac{\mathrm{d}v}{\mathrm{d}t}$
+\end{lstlisting}
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$
+\end{lstlisting}
+		
 	
-	\subsection{General recommendations for mathematics typewriting}
+	\subsection{General recommendations for equations}
 		
 		Recommendations:
 		\begin{itemize}
