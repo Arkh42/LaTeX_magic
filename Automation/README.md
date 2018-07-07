@@ -34,6 +34,8 @@ Empty.
 
 | Name							| Short description														|
 | :---------------------------- | :-------------------------------------------------------------------- |
+| _class_template				| Structure for class definition to speed the writing up.				|
+| _package_template				| Structure for package definition to speed the writing up.				|
 | report_standard__EN__LUA_XE	| Report (standard class) for medium-size document including chapters.	|
 | report_standard__EN__PDF		| Report (standard class) for medium-size document including chapters.	|
 
@@ -55,3 +57,9 @@ where
 | LUA	 | LuaLaTeX |
 | PDF	 | PDFLaTeX |
 | XE	 | XeLaTeX  |
+
+
+## References
+
+From CTAN:
+* [clsguide – Documentation of LaTeX class and package writing](https://ctan.org/pkg/clsguide)
