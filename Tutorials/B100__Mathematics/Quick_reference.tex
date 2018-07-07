@@ -107,6 +107,44 @@
 
 
 \begin{frame}
+	\frametitle{Grouping equations}
+	\framesubtitle{No alignment inside the group}
+	
+	Tool: \texttt{gather} environment.
+	
+	Example with the local equation from Ampere theorem:
+	\begin{gather}
+		\vec{\nabla} \times \vec{B}
+			= \mu_0 \vec{\jmath}
+			+ \varepsilon_0 \mu_0 \frac{\partial \vec{E}}{\partial t}, \\
+		\intertext{which can be written in the integral form by applying the Green theorem}
+		\oint_{C} \vec{B} \cdot \mathrm{d} \vec{l}
+			= \mu_0 \iint_S \vec{\jmath} \cdot \mathrm{d} \vec{S}
+			+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{\partial t} \cdot \mathrm{d} \vec{S}.
+	\end{gather}
+	
+	Text can be written between equations thanks to the \texttt{intertext} and \texttt{shortintertext} commands.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Grouping equations}
+	\framesubtitle{Alignment inside the group}
+	
+	Tool: \texttt{align} environment.
+	
+	Examples with the vector potential:
+	\begin{align}
+		\vec{B} &= \vec{\nabla} \times \vec{A} \\
+		\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}
+	\end{align}
+	
+	 The \texttt{intertext} and \texttt{shortintertext} commands are also available.
+	 
+	 The alignment is generally performed on the equal sign.
+\end{frame}
+
+
+\begin{frame}
 	\frametitle{Package options for layout modification}
 
 	It is possible to change the layout of equations thanks to package options:

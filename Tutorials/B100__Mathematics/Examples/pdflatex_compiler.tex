@@ -74,5 +74,28 @@
 		
 		Inline equations are equations written in the text.
 		For instance, I could specify that $\vec{B}$ in \cref{eq::Maxwell:no_magnetic_monopole} is the magnetic field.
+	
+	
+	\section{Grouping equations}
+	
+		Two main environments can be used to group equations : \texttt{gather} and \texttt{align}.
+		The former groups without aligning, the latter groups and aligns equations.
+		
+		Example based on \texttt{gather}:
+		\begin{gather}
+			\vec{\nabla} \times \vec{B}
+				= \mu_0 \vec{\jmath}
+				+ \varepsilon_0 \mu_0 \frac{\partial \vec{E}}{\partial t}, \\
+			\intertext{which can be written in the integral form by applying the Green theorem}
+			\oint_{C} \vec{B} \cdot \mathrm{d} \vec{l}
+				= \mu_0 \iint_S \vec{\jmath} \cdot \mathrm{d} \vec{S}
+				+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{\partial t} \cdot \mathrm{d} \vec{S}.
+		\end{gather}
+		
+		Example based on \texttt{align}:
+		\begin{align}
+			\vec{B} &= \vec{\nabla} \times \vec{A}, \\
+			\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}.
+		\end{align}
 %
 \end{document}
