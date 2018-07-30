@@ -52,9 +52,17 @@
 \end{frame}
 
 
-% *** Tutorial *** %
+% *** Contents *** %
 \begin{frame}
-	\frametitle{\LaTeX-related software}
+	\tableofcontents
+\end{frame}
+
+
+% *** Tutorial *** %
+\section{Software}
+
+\begin{frame}
+	\frametitle{\LaTeX-related programs}
 	
 	To write a document with \LaTeX{}, the user must install specific programs, as for any other text editor.
 	These are:
@@ -67,6 +75,8 @@
 	The editor is a program which simplifies the \LaTeX{} writing by providing shortcuts for compilation (cf. next tutorial) and shortcuts for text styling (e.g., \texttt{CTRL+B} creates bold text).
 \end{frame}
 
+
+\section{Distribution}
 
 \begin{frame}
 	\frametitle{Which distribution to choose}
@@ -106,6 +116,8 @@
 \end{frame}
 
 
+\section{Editor}
+
 \begin{frame}
 	\frametitle{Which editor to choose}
 	\framesubtitle{Comparison of LaTeX editors based on OS compatibility}
@@ -139,11 +151,70 @@
 \end{frame}
 
 
+\section{Installation examples}
+
 \begin{frame}
 	\frametitle{Installation process}
+	\framesubtitle{Preliminary notes}
 	
-	%TODO MikTeX
-	%TODO TeX Lve
+	Here after examples of installation for different distributions are shown.
+	Among the details provided for each step, the installer download is intended for Windows users.
+	For Linux users, it is strongly recommended to use the program installer utility related to the Linux distribution.
+	For example, \texttt{apt-get} on Ubuntu.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Installation process}
+	\framesubtitle{Installing \TeX{} Live}
+	
+	Here below the installation of the \TeX{} Live distribution together with the \TeX{}studio editor is presented.
+	
+	Follow the steps:
+	\begin{enumerate}
+		\item install the \TeX{} Live distribution
+			\begin{enumerate}
+				\item download the \href{https://www.tug.org/texlive/acquire-netinstall.html}{installer} and run it,
+				\item choose \enquote{Custom install} and click on \enquote{Next},
+				\item select the scheme and the packages that you need
+				\begin{itemize}
+					\item if you have any doubt select the \enquote{scheme-full} that installs all packages,
+					\item otherwise you can change the installation collections,
+				\end{itemize}
+				\item click on \enquote{Install TeX Live} $\rightarrow$ this takes a moment,
+			\end{enumerate}
+		\item install the \TeX{}studio editor
+			\begin{enumerate}
+				\item download the \href{https://www.texstudio.org/}{installer} and run it,
+				\item the editor should detect your \LaTeX{} distribution at first run.
+			\end{enumerate}	
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Installation process}
+	\framesubtitle{Installing MiK\TeX{}}
+	
+	Here below the installation of the MiK\TeX{} distribution together with the \TeX{}studio editor is presented.
+	
+	Follow the steps:
+	\begin{enumerate}
+		\item install the MiK\TeX{} distribution
+		\begin{enumerate}
+			\item go in the \href{https://miktex.org/download}{download} section of the MiK\TeX{} website,
+			\item click on the \enquote{All downloads} tab,
+			\item select the installer that you need
+			\begin{itemize}
+				\item Basic Installer for a standard \LaTeX{} system,
+				\item Net Installer for a complete \LaTeX{} system,
+			\end{itemize}
+			\item run the installer $\rightarrow$ this takes a moment,
+		\end{enumerate}
+		\item install the \TeX{}studio editor
+		\begin{enumerate}
+			\item download the \href{https://www.texstudio.org/}{installer} and run it,
+			\item the editor should detect your \LaTeX{} distribution at first run.
+		\end{enumerate}	
+	\end{enumerate}
 \end{frame}
 
  

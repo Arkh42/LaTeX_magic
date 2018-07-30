@@ -15,7 +15,7 @@ Each tutorial is contained in a folder which includes the following documents:
 | Index   | Title                           | Short description														| Status	|    
 | :-----: | :------------------------------ | :-------------------------------------------------------------------- | :-----:	|
 |  B000   | Adopting LaTeX					| Some answers to "Why should we (not) use LaTeX?"						| TD		|
-|  B001   | Installing LaTeX				| Distributions, editors, advices.										| ...		|
+|  B001   | Installing LaTeX				| Distributions, editors, advices.										| V			|
 |  B002   | Compiling LaTeX					| Existing compilers, features, choice.									| V			|
 |  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| V			|
 |  B004   | Choosing Document Class			| Existing document classes, features, choice.							| TD		|
