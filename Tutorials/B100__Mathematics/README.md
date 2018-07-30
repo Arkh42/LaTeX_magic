@@ -11,7 +11,7 @@ CTAN documentation:
 Fora about mathematics with LaTeX:
 * [Why is \[ … \] preferable to $$ … $$?](https://tex.stackexchange.com/questions/503/why-is-preferable-to),
 * [What are the differences between $$, \[, align, equation and displaymath?](https://tex.stackexchange.com/questions/40492/what-are-the-differences-between-align-equation-and-displaymath),
-* [](),
+* [What is the difference between \notag and \nonumber in align environment?](https://tex.stackexchange.com/questions/48965/what-is-the-difference-between-notag-and-nonumber-in-align-environment).
 
 Wikipédia about [Équations de Maxwell](https://fr.wikipedia.org/wiki/%C3%89quations_de_Maxwell).
 

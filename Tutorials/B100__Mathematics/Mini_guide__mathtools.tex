@@ -5,7 +5,7 @@
 %             %
 
 
-\chapter{Mathematics -- The \enquote{mathtools} package}
+\chapter{Mathematics -- Basics with the \enquote{mathtools} package}
 
 Mathematics writing is one of the most advantage of \LaTeX{} compared to common text editors.
 On a first approach, it looks like a programming language but it is in fact quite intuitive.
@@ -98,11 +98,7 @@ $\vec{B}$
 		The problem presented here above is related to the following \LaTeX{} codes:
 \begin{lstlisting}[language={[LaTeX]TeX}]
 $a=\frac{\mathrm{d}v}{\mathrm{d}t}$
-\end{lstlisting}
-\begin{lstlisting}[language={[LaTeX]TeX}]
 $a=\dfrac{\mathrm{d}v}{\mathrm{d}t}$
-\end{lstlisting}
-\begin{lstlisting}[language={[LaTeX]TeX}]
 $\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$
 \end{lstlisting}
 		
@@ -118,6 +114,83 @@ $\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$
 				\item for very small, less important formulae which do not contain \enquote{big} symbols (e.g., integral, fraction).
 			\end{itemize}
 		\end{itemize}
+	
+	
+\section{Writing groups of equations}
+
+	Several commands and environments allow to group equations.
+	The most-used are presented here after.
+	For a complete presentation, please refer to the \enquote{amsmath} and \enquote{mathtools} packages documentation.
+	
+	
+	\subsection{Group of equations}
+	
+		The first tool which allow to group equations is the \texttt{gather} environment.
+		Inside the environment, a double backslash (\textbackslash\textbackslash) indicates the end of an equation.
+		Consequently, a new line is produced and another equation can be written.
+		Pay attention: no double backslash must be put after the last equation.
+		Otherwise, an additional space is added at the end of the group.
+		
+		Unless the starred version (\texttt{gather*}) is used, all equations are numbered.
+		To prevent one line from being numbered, the \texttt{\textbackslash{}notag} or the \texttt{\textbackslash{}nonumber} command can be used.
+		
+		It is also possible to write text between equations while still being in the \texttt{gather} environment.
+		This is done with the \texttt{\textbackslash{}intertext} command, or \texttt{\textbackslash{}shortintertext} which removes extra vertical space.
+		It is specifically useful for a mathematical development.
+		
+		As an example, the	
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{gather}
+	\vec{\nabla} \times \vec{B}
+		= \mu_0 \vec{\jmath}
+		+ \varepsilon_0 \mu_0 \frac{\partial \vec{E}}{\partial t},
+		\\
+	\intertext{which can be written in the integral form by 
+		applying the Green theorem}
+	\oint_{C} \vec{B} \cdot \mathrm{d} \vec{l}
+		= \mu_0 \iint_S \vec{\jmath} \cdot \mathrm{d} \vec{S}
+		+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{
+			\partial t}	\cdot \mathrm{d} \vec{S}
+\end{gather}
+\end{lstlisting}	
+		code will generate
+		\begin{gather}
+			\vec{\nabla} \times \vec{B}
+				= \mu_0 \vec{\jmath}
+				+ \varepsilon_0 \mu_0 \frac{\partial \vec{E}}{\partial t},
+				\\
+			\intertext{which can be written in the integral form by applying the Green theorem}
+			\oint_{C} \vec{B} \cdot \mathrm{d} \vec{l}
+				= \mu_0 \iint_S \vec{\jmath} \cdot \mathrm{d} \vec{S}
+				+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{\partial t} \cdot \mathrm{d} \vec{S}
+		\end{gather}
+		(see the use of \texttt{\textbackslash{}intertext}).
+	
+	
+	\subsection{Group of aligned equations}
+	
+		The second tool allowing to group equations is the \texttt{align} environment.
+		It does the same as the \texttt{gather} environment but also allows to align the equations.
+		The alignment is performed thanks to the \& symbol.
+		All other commands and symbol performs the same as in the texttt{gather} environment.
+		
+		For instance,
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{align}
+	\vec{B} &= \vec{\nabla} \times \vec{A} \\
+	\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}.
+\end{align}
+\end{lstlisting}
+		creates
+		\begin{align}
+			\vec{B} &= \vec{\nabla} \times \vec{A} \\
+			\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}.
+		\end{align}
+	
+	
+	\subsection{Using the commands instead of the environments}
+	
+		The main difference with the \texttt{equation} environment is that all lines can be numbered.
 
 
 % *** End of chapter ***
