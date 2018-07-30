@@ -6,7 +6,9 @@
 CTAN documentation:
 * the [mathtools](https://ctan.org/pkg/mathtools) package,
 * the [amsmath](https://ctan.org/pkg/amsmath) package,
-* more about [amsmath](https://ctan.org/pkg/latex-amsmath).
+* more about [amsmath](https://ctan.org/pkg/latex-amsmath),
+* the [cases](https://ctan.org/pkg/cases) package,
+* the [systeme](https://ctan.org/pkg/systeme) package.
 
 Fora about mathematics with LaTeX:
 * [Why is \[ … \] preferable to $$ … $$?](https://tex.stackexchange.com/questions/503/why-is-preferable-to),
