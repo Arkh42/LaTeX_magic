@@ -8,7 +8,8 @@ CTAN documentation:
 * the [amsmath](https://ctan.org/pkg/amsmath) package,
 * more about [amsmath](https://ctan.org/pkg/latex-amsmath),
 * the [cases](https://ctan.org/pkg/cases) package,
-* the [systeme](https://ctan.org/pkg/systeme) package.
+* the [systeme](https://ctan.org/pkg/systeme) package,
+* the [physics](https://ctan.org/pkg/physics) package.
 
 Fora about mathematics with LaTeX:
 * [Why is \[ … \] preferable to $$ … $$?](https://tex.stackexchange.com/questions/503/why-is-preferable-to),
