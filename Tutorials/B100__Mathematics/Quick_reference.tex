@@ -56,7 +56,18 @@
 \end{frame}
 
 
+% *** Contents *** %
+\begin{frame}
+	\frametitle{Overview}
+	
+	\tableofcontents
+\end{frame}
+
+
 % *** Tutorial *** %
+%-----
+\section{Useful packages}
+
 \begin{frame}
 	\frametitle{Packages for mathematics}
 
@@ -66,6 +77,9 @@
 	\end{itemize}
 \end{frame}
 
+
+%-----
+\section{Writing equations}
 
 \begin{frame}
 	\frametitle{Equations}
@@ -106,11 +120,14 @@
 \end{frame}
 
 
+%-----
+\section{Grouping equations}
+
 \begin{frame}
 	\frametitle{Grouping equations}
 	\framesubtitle{No alignment inside the group}
 	
-	Tool: \texttt{gather} environment.
+	Tool: \texttt{gather} environment, double backslash (\textbackslash\textbackslash) before starting a new equation.
 	
 	Example with the local equation from Ampere theorem:
 	\begin{gather}
@@ -130,7 +147,7 @@
 	\frametitle{Grouping equations}
 	\framesubtitle{Alignment inside the group}
 	
-	Tool: \texttt{align} environment.
+	Tool: \texttt{align} environment, double backslash (\textbackslash\textbackslash) before starting a new equation, ampersand (\&) to indicate where the alignment is performed.
 	
 	Examples with the vector potential:
 	\begin{align}
@@ -143,6 +160,83 @@
 	 The alignment is generally performed on the equal sign.
 \end{frame}
 
+
+%-----
+\section{Matrices}
+
+\begin{frame}
+	\frametitle{Matrices}
+	\framesubtitle{Types of matrices}
+	
+	Matrices can be written by using a \texttt{matrix}-like environment inside a mathematical equation environment such as the ones presented here above.
+	
+	Several types of matrices exist.
+	They differ with the type of delimiters surrounding the matrix:
+	\begin{align*}
+		\text{\texttt{matrix}} && \text{\texttt{pmatrix}} && \text{\texttt{bmatrix}} && \text{\texttt{Bmatrix}} \\
+		%
+		\begin{matrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{matrix} 
+		&&
+		\begin{pmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{pmatrix}
+		&&
+		\begin{bmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{bmatrix}
+		&&
+		\begin{Bmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{Bmatrix} \\
+		%
+		%
+		&& \text{\texttt{vmatrix}} && \text{\texttt{Vmatrix}} && \\
+		%
+		&&
+		\begin{vmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{vmatrix}
+		&&
+		\begin{Vmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{Vmatrix}
+		&& \\
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Matrices}
+	\framesubtitle{Alignment}
+	
+	By default, numbers are centred in each column of a matrix:
+	\begin{equation*}
+		\begin{pmatrix}
+			2  & -3 \\
+			42 & 0
+		\end{pmatrix}
+	\end{equation*}
+	
+	A starred version of each \texttt{matrix} environment offers an optional argument where the alignment can be provided through a letter: \texttt{c} for center, \texttt{r} for right and \texttt{l} for left.
+	Example with right alignment:
+	\begin{equation*}
+		\begin{pmatrix*}[r]
+			2  & -3 \\
+			42 & 0
+		\end{pmatrix*}
+	\end{equation*}
+\end{frame}
+
+
+%-----
+\section{Laying out the mathematics}
 
 \begin{frame}
 	\frametitle{Package options for layout modification}
