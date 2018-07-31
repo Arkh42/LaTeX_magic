@@ -28,6 +28,8 @@
 
 % Mathematics
 \usepackage{mathtools}
+\usepackage{cases}
+\usepackage{systeme}
 
 % Floats
 \usepackage{float}
@@ -73,7 +75,8 @@
 
 	Some packages very useful for mathematics are listed here below:
 	\begin{itemize}
-		\item \texttt{mathtools} which is mainly an upgrade of the very well-known \texttt{amsmath} package.
+		\item \enquote{mathtools} which is mainly an upgrade of the very well-known \enquote{amsmath} package (the backbone for mathematics with \LaTeX{}),
+		\item \enquote{cases} which provides the \texttt{numcases} command to number all lines of a system of equations.
 	\end{itemize}
 \end{frame}
 
@@ -158,6 +161,100 @@
 	 The \texttt{intertext} and \texttt{shortintertext} commands are also available.
 	 
 	 The alignment is generally performed on the equal sign.
+\end{frame}
+
+
+%-----
+\section{Systems of equations}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Defined-by-domain functions}
+	
+	Tool: \texttt{cases} environment, which displays an opening bracket surrounding all equations included in the environment.
+	It must be included inside another mathematical equation environment.
+	As in \texttt{align}, \textbackslash\textbackslash{} before starting a new line.
+	One and only one \& per line can be used to create a column, typically used to specify the domain on which the equation is valid.
+	
+	A starred version makes the right column \emph{text-mode} instead of \emph{math-mode}.
+	A \texttt{dcases} variant makes the environment \emph{displaystyle}.
+	
+	For examples:
+	\begin{equation}
+		a = \begin{cases*}
+			x^2 + 2					& if  $x<2$  \\
+			\int x-3\, \mathrm{d}x	& otherwise
+		\end{cases*}
+	\end{equation}
+	\begin{equation}
+		a = \begin{dcases*}
+			x^2 + 2					& if  $x<2$  \\
+			\int x-3\, \mathrm{d}x	& otherwise
+		\end{dcases*}
+	\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Systems using \texttt{cases}: not very efficient}
+	
+	The \texttt{cases} environment to write systems:
+	\begin{align}
+		\begin{cases}
+			x  +2y - z  = 1 \\
+			x  -3y + 2z = 4 \\
+			-x +y  +z   = 0 
+		\end{cases}
+	\end{align}
+	
+	Issues:
+	\begin{enumerate}
+		\item the whole system is numbered but it would be useful to number each line of the system $\rightarrow$ see the \enquote{cases} package,
+		\item there is no alignment between the variables like it is sometimes done in algebra.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Numbering all lines of the system}
+	
+	Tool: \texttt{numcases} environment from the \enquote{cases} packages:
+	\begin{numcases}{}
+		x  +2y - z  = 1 \\
+		x  -3y + 2z = 4 \\
+		-x +y  +z   = 0 
+	\end{numcases}
+	
+	Can also be used for defined-by-domain functions:
+	\begin{numcases}{a=}
+		x^2 + 2					& if  $x<2$  \\
+		\int x-3\, \mathrm{d}x	& otherwise
+	\end{numcases}
+	
+	In addition to the numbering of all lines, it correspond to \texttt{dcases*}, which means that:
+	\begin{itemize}
+		\item it is directly in \emph{displaystyle},
+		\item the right column is in \emph{text-mode}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Alignment on variables}
+	
+	Tool: \texttt{systeme} command from the \enquote{systeme} packages.
+	Works outside any math environment and inside \texttt{equation}.
+	Commas (,) used to separate equations.
+	
+	Example:
+	\begin{equation}
+		\systeme{%
+			x  +2y - z  = 1,
+			x  -3y + 2z = 4,
+			-x +y  +z   = 0}
+	\end{equation}
+	
+	Issue: the numbering counter used by the \texttt{systeme} command is independent from the \LaTeX{}'s equation internal counter.
 \end{frame}
 
 
