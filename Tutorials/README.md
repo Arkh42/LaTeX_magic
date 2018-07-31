@@ -20,7 +20,7 @@ Each tutorial is contained in a folder which includes the following documents:
 |  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| V			|
 |  B004   | Choosing Document Class			| Existing document classes, features, choice.							| TD		|
 |  B005   | LaTeX Vocabulary				| Preamble & document, package & class, commands and environments.		| TD		|
-|  B100   | Mathematics	 - Basics			| Basics to write mathematics with LaTeX.								| ...		|
+|  B100   | Mathematics	 - Basics			| Basics to write mathematics with LaTeX.								| V			|
 |  C100   | Maths - Systems					| Systems of equations and functions defined by domains.				| ...		|
 |  C101   | Maths - Matrices				| Matrices with different surrounding delimiters.						| ...		|
 |  C102   | Maths - Derivatives				| How to write systems of equations and functions defined by domains.	| ...		|

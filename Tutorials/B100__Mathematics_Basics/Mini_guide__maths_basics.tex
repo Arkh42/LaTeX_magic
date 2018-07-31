@@ -1,0 +1,320 @@
+%             %
+%%           %%
+%%% CHAPTER %%%
+%%           %%
+%             %
+
+
+\chapter{Mathematics -- Basics with the \enquote{mathtools} package}
+
+	\label{cha::maths:basics}
+
+
+Mathematics writing is one of the most advantage of \LaTeX{} compared to common text editors.
+On a first approach, it looks like a programming language but it is in fact quite intuitive.
+
+
+
+\section{Packages for mathematics}
+
+
+	The first package which was extremely useful in mathematics writing was \emph{amsmath}.
+	Since then, it has been upgraded by the \emph{mathtools} package that I recommend to use.
+	Hence the following line in the preamble of the document:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\usepackage{mathtools}
+\end{lstlisting}
+
+
+	Other interesting packages are:
+	\begin{itemize}
+		\item \emph{cases} which provides the \texttt{numcases} command to number all lines of a system of equations,
+		\item \emph{systeme} which provides command to format a system of equations for better readility, and
+		\item \emph{physics} which provides many commands to facilitate the writing of \enquote{complex} equations including derivatives and partial derivatives.
+	\end{itemize}
+	However, \emph{systeme} is quite new at the time this document is being written and so it could lack of maturity.
+
+
+
+\section{Writing an equation}
+
+
+	Usually, when a writer wants to put mathematics in a document, it takes the form of an equation.
+	Writing an equation is simply done thanks to the \texttt{equation} environment.
+	Maxwell's equations will be used as examples: so, the 
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{equation}
+	\vec{\nabla}\cdot\vec{B}=0.
+	\label{eq::Maxwell:no_magnetic_monopole}
+\end{equation}
+\end{lstlisting}
+	\LaTeX{} code generates
+	\begin{equation}
+		\vec{\nabla}\cdot\vec{B}=0.
+		\label{eq::Maxwell:no_magnetic_monopole}
+	\end{equation}
+	
+	
+	Here is the power of \LaTeX{}: automatic numbering of equations.
+	In \emph{book}-like documents, equations are numbered within chapters by default, i.e., (1.x) in chapter~1, (2.x) in chapter~2 and so on.
+	Moreover, equations numbers (a.k.a. tags) are placed on the right side.
+	Of course, this layout can be modified.
+	
+	
+	
+	\subsection{Unnumbered equations}
+	
+	
+		Automatic numbering can be avoided by using the starred version of the previous environment: \texttt{equation*}.
+		For instance,
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{equation*}
+	\vec{\nabla}\times\vec{E}
+		=-\frac{\partial\vec{B}}{\partial t}.
+\end{equation*}
+\end{lstlisting}	
+		produces
+		\begin{equation*}
+			\vec{\nabla}\times\vec{E}
+				=-\frac{\partial\vec{B}}{\partial t}.
+		\end{equation*}
+		Nevertheless, it is generally recommended to number all equations in scientific documents for easier reference.
+		
+		
+		Shorter forms of the unnumbered version are offered by the package: the \textbackslash{}[ \ldots \textbackslash{}] wrapper or the double \$\$ symbol.
+		Please note that the latter is plain \TeX{}, which means that it should not be used with \LaTeX{} because it is not robust.
+		Though, the reason for which \$\$ is presented in this document is that it is overly used on the Internet \footnote{And, as we all know, if it is on the Internet, it must be true\ldots}.
+		
+		Here follow the corresponding examples:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$$\iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S},$$
+\end{lstlisting}
+		is the code corresponding to
+		$$ \iint_{\Sigma_f} \vec{B} \cdot \mathrm{d}\vec{S}, $$
+		while
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\[ \oint_{C} \vec{E} \cdot \mathrm{d}\vec{l}
+	= - \iint_{S} \frac{\partial\vec{B}}{\partial t}
+	  \cdot \mathrm{d}\vec{S}. \]
+\end{lstlisting}
+		creates
+		\[ \oint_{C} \vec{E} \cdot \mathrm{d}\vec{l}
+			= - \iint_{S} \frac{\partial\vec{B}}{\partial t}
+			  \cdot \mathrm{d}\vec{S}. \]
+			  
+		However, I do not recommend to use short forms. 
+		On the one hand, the \texttt{equation*} environment highlights the mathematics when looking in the \LaTeX{} code.
+		On the other hand, if the author changes his mind and wants to number the equation, he must simply remove the \texttt{*} character.
+	
+	
+	
+	\subsection{Inline equations}
+	
+	
+		Inline equations are equations written in the text.
+		It can be useful in some circumstances, such as the description of a variable.
+		For instance, I could specify that $\vec{B}$ in \cref{eq::Maxwell:no_magnetic_monopole} is the magnetic field.
+		To do so, the equation is surrounded by single \$ signs:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$\vec{B}$
+\end{lstlisting}
+
+
+
+	\subsection{Text-mode VS math-mode}
+	
+		Inline equations underlines a fundamental behaviour of \LaTeX{}: the difference between \emph{math-mode} and \emph{text-mode}.
+		As the names explain, text-mode is the regular mode of \LaTeX{} as the main part of the document is usually text, while math-mode is set in specific environments intended for mathematics.
+		
+		Compare
+		\begin{center}
+			regular behaviour (text-mode),
+			$text in mathematical environment (math-mode)$.
+		\end{center}
+		that is produced by
+\begin{lstlisting}[language={[LaTeX]TeX}]
+regular behaviour (text-mode),
+$text in mathematical environment (math-mode)$.
+\end{lstlisting}
+	
+	
+		Math-mode has several effects:
+		\begin{itemize}
+			\item a math font is used instead of the text font,
+			\item the default font family is slanted while it is normal roman font in text,
+			\item it manages white spaces in a different way than the ongoing typographical rules
+				\begin{itemize}
+					\item any white space is automatically removed,
+					\item white space is added around mathematical operators,
+				\end{itemize}
+			\item commands available in math-mode only will not generate errors.
+		\end{itemize}
+	
+	
+	
+	\subsection{Consequences of text- and math-mode: display style}
+	
+		
+		Sometimes, inline equations may introduce unpleasant distortion in the text, especially with \enquote{big} symbols.
+		As an example, let us use express the acceleration as the derivative of the speed:
+		$a=\frac{\mathrm{d}v}{\mathrm{d}t}$.
+		It can be seen that the fraction symbol has been compacted to fit with the line space.
+		It happens when math-mode is used inside a block text-mode, like it is the case with inline equations.
+		
+		
+		It is possible to prevent the fraction from being reshaped by forcing the \emph{displayed math-mode}.
+		To do so, the writer must use the \texttt{displaystyle} command, which exists in shorter forms for common mathematical symbols such as fractions.
+		Expressing again the acceleration:
+		$a=\dfrac{\mathrm{d}v}{\mathrm{d}t}$, or, equivalently,
+		$\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$.
+		It can be seen that the space line is increased above and below the line including the equation, creating a somewhat uncomfortable text arrangement.
+		
+		
+		The problem presented here above is related to the following \LaTeX{} codes:
+\begin{lstlisting}[language={[LaTeX]TeX}]
+$a=\frac{\mathrm{d}v}{\mathrm{d}t}$
+$a=\dfrac{\mathrm{d}v}{\mathrm{d}t}$
+$\displaystyle a=\frac{\mathrm{d}v}{\mathrm{d}t}$
+\end{lstlisting}
+		It will appear every time a \enquote{big} symbol (fraction, integral, sum, etc.) is used.
+		However, it never occurs within mathematical environments such as \texttt{equation} because in that case the maths are \emph{displayed}, i.e., horizontally centred and wrapped with additional vertical space in order to be highlighted and readable.
+	
+	
+	\subsection{General recommendations for equations}
+		
+		Recommendations:
+		\begin{itemize}
+			\item use numbered equation only (with the \texttt{equation} environment),
+			\item try to avoid inline equations except
+			\begin{itemize}
+				\item to describe variables or operators,
+				\item for very small, less important and/or very well-known formulae which do not contain \enquote{big} symbols (e.g., integral, fraction).
+			\end{itemize}
+		\end{itemize}
+	
+	
+	
+\section{Writing groups of equations}
+
+
+	Several commands and environments allow to group equations.
+	The most-used are presented here after.
+	For a complete presentation, please refer to the \emph{amsmath} and \emph{mathtools} packages documentation.
+	
+	
+	
+	\subsection{Group of equations}
+	
+	
+		The first tool which allow to group equations is the \texttt{gather} environment.
+		Inside the environment, a double backslash (\textbackslash\textbackslash) indicates the end of an equation and the beginning of a new one.
+		Consequently, a new line is produced and another equation can be written.
+		Pay attention: no double backslash must be put after the last equation.
+		Otherwise, an additional space is added at the end of the group.
+		
+		
+		Unless the starred version (\texttt{gather*}) is used, all equations are numbered.
+		To prevent one line from being numbered, the \texttt{\textbackslash{}notag} or the \texttt{\textbackslash{}nonumber} command can be used.
+		
+		
+		It is also possible to write text between equations while still being in the \texttt{gather} environment.
+		This is done with the \texttt{intertext} command, or \texttt{shortintertext} which removes extra vertical space.
+		It is specifically useful for a mathematical development.
+		Within these commands, \LaTeX{} is in text-mode, while it is in math-mode within the rest of the \texttt{gather} environment.
+		
+		
+		As an example, the	
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{gather}
+	\vec{\nabla} \times \vec{B}
+		= \mu_0 \vec{\jmath}
+		+ \varepsilon_0 \mu_0 \frac{\partial \vec{E}}{\partial t},
+		\\
+	\intertext{which can be written in the integral form by 
+		applying the Green theorem}
+	\oint_{C} \vec{B} \cdot \mathrm{d} \vec{l}
+		= \mu_0 \iint_S \vec{\jmath} \cdot \mathrm{d} \vec{S}
+		+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{
+			\partial t}	\cdot \mathrm{d} \vec{S}
+\end{gather}
+\end{lstlisting}	
+		code will generate
+		\begin{gather}
+			\vec{\nabla} \times \vec{B}
+				= \mu_0 \vec{\jmath}
+				+ \varepsilon_0 \mu_0 \frac{\partial \vec{E}}{\partial t},
+				\\
+			\intertext{which can be written in the integral form by applying the Green theorem}
+			\oint_{C} \vec{B} \cdot \mathrm{d} \vec{l}
+				= \mu_0 \iint_S \vec{\jmath} \cdot \mathrm{d} \vec{S}
+				+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{\partial t} \cdot \mathrm{d} \vec{S}
+		\end{gather}
+		(see the use of \texttt{\textbackslash{}intertext}).
+	
+	
+	
+	\subsection{Group of aligned equations}
+	
+	
+		The second tool allowing to group equations is the \texttt{align} environment.
+		It does the same as the \texttt{gather} environment but also allows to align the equations.
+		The alignment is performed thanks to the ampersand (\&) symbol.
+		All other commands and symbols performs the same as in the \texttt{gather} environment.
+		
+		
+		For instance,
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\begin{align}
+	\vec{B} &= \vec{\nabla} \times \vec{A} \\
+	\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}.
+\end{align}
+\end{lstlisting}
+		creates
+		\begin{align}
+			\vec{B} &= \vec{\nabla} \times \vec{A} \\
+			\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}.
+		\end{align}
+	
+	
+	
+	\subsection{General recommendations for groups of equations}
+	
+		Recommendations:
+		\begin{itemize}
+			\item use numbered equations only (unstarred versions) with possible exceptions for
+			\begin{itemize}
+				\item numerical computations,
+				\item proofs (theorems, formulae, etc.),
+			\end{itemize}
+			\item do not abuse of intertext because it makes the \LaTeX{} code less readable.
+		\end{itemize}
+
+
+
+\section{Common symbols for mathematics}
+
+	Mathematics would not be mathematics without any symbols.
+	Common ones are:
+	\begin{itemize}
+		\item arithmetic operators such as $+$ and $-$,
+		\item comparison operators like $>$ and $<$.
+	\end{itemize}
+
+	Less intuitive but still useful symbols are:
+	\begin{itemize}
+		\item the multiplication operator $\cdot$ generated by the \texttt{cdot} command,
+		\item the fraction symbol $\frac{n}{d}$ created by the \texttt{frac} command,
+		\item the integral $\int$ which is produced by the \texttt{int} command, and
+		\item any text symbol that is usually generated by a command having the same name (e.g., $\sin$ with the \texttt{sin} command or $\exp$ with \texttt{exp}).
+	\end{itemize}
+	
+	There are many other symbols and being exhaustive is not the purpose of this mini-guide.
+	If the reader is looking for specific symbols, he may refer to:
+	\begin{itemize}
+		\item his \LaTeX{} editor, which generally provides a list of shortcuts and buttons to generate the correct commands,
+		\item a \href{https://fr.sharelatex.com/learn/List_of_Greek_letters_and_math_symbols}{quick review} of symbols from ShareLaTeX,
+		\item a \href{http://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}{big list} of symbols native from \TeX{} and coming from different packages.
+	\end{itemize}
+
+
+% *** End of chapter ***

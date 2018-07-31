@@ -28,8 +28,6 @@
 
 % Mathematics
 \usepackage{mathtools}
-\usepackage{cases}
-\usepackage{systeme}
 
 % Floats
 \usepackage{float}
@@ -75,8 +73,11 @@
 
 	Some packages very useful for mathematics are listed here below:
 	\begin{itemize}
-		\item \enquote{mathtools} which is mainly an upgrade of the very well-known \enquote{amsmath} package (the backbone for mathematics with \LaTeX{}),
-		\item \enquote{cases} which provides the \texttt{numcases} command to number all lines of a system of equations.
+		\item the very well-known \emph{amsmath} package which is the backbone for mathematics with \LaTeX{},
+		\item \alert{\emph{mathtools}} which is mainly an upgrade of \emph{amsmath},
+		\item \emph{cases} which provides the \texttt{numcases} command to number all lines of a system of equations (cf. tutorial C100),
+		\item \emph{systeme} which provides command to format a system of equations for better readility (cf. tutorial C100), and
+		\item \emph{physics} which provides many commands to facilitate the writing of \enquote{complex} equations including derivatives and partial derivatives (cf. tutorial C102).
 	\end{itemize}
 \end{frame}
 
@@ -86,39 +87,53 @@
 
 \begin{frame}
 	\frametitle{Equations}
+	\framesubtitle{Main environment for mathematics}
 	
-	The main LaTeX environment to write an equation is\dots{} \texttt{equation}.
+	The \structure{main \LaTeX{}'s environment} to write an equation is\dots{} \alert{\texttt{equation}}.
 	As an example:
 	\begin{equation}
 		\vec{\nabla}\cdot\vec{B}=0
 		\label{eq::Maxwell:no_magnetic_monopole}
 	\end{equation}
 	
-	The starred version disables numbering:
+	The starred version (\texttt{equation*}) disables numbering:
 	\begin{equation*}
 		\vec{\nabla}\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}
 	\end{equation*}
 	
-	There are also shorter forms thanks to:
+	There are also shorter forms:
 	\begin{itemize}
-		\item the \textbackslash [ \ldots \textbackslash ] wrapper surrounding the equation,
-		\item the double \$\$ symbol surrounding the equation (plain \TeX{}, deprecated, should not be used).
+		\item the \textbackslash{}[ \ldots \textbackslash{}] wrapper surrounding the equation,
+		\item the double \$\$ symbol surrounding the equation (still overly used but it is plain \TeX{} and should not be used).
 	\end{itemize}
-	However, I recommend the use of the \texttt{equation} environment because it highlights the mathematics in the \LaTeX{} code and for its versatility between the numbered and the unnumbered version.
+
+	\structure{Recommendation}: use \texttt{equation} instead of the short forms:
+	\begin{itemize}
+		\item it highlights the mathematics in the \LaTeX{} code,
+		\item versatility between the numbered and the unnumbered version.
+	\end{itemize}
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{Inline equations}
+	\frametitle{Equations}
+	\framesubtitle{Inline equations -- text-mode \& math-mode}
 	
-	It is sometimes useful to write mathematics inside a text, for instance to describe the variable $\vec{B}$ appearing in \cref{eq::Maxwell:no_magnetic_monopole}.
+	\structure{Need}: it is sometimes useful to write mathematics inside a text, for instance to describe the variable $\vec{B}$ appearing in \cref{eq::Maxwell:no_magnetic_monopole}.
 	To do so, the mathematical formula must be wrapped by single \$ signs.
 	
-	Recommendation: try to not abuse of inline equations because they
+	Inline equations underlines a fundamental behaviour of \LaTeX{}: the difference between \alert{math-mode and text-mode}.
+	Compare:
 	\begin{itemize}
-		\item can be difficult to read in the text,
-		\item could \enquote{ruin} the line space,
-		\item cannot be numbered so it is not possible to refer to them.
+		\item regular text (text-mode),
+		\item $text in mathematical environment$ (math-mode).
+	\end{itemize}
+	Know the mode inside an environment to understand how \LaTeX{} will behave.
+	
+	\structure{Recommendation}: use inline equations only
+	\begin{itemize}
+		\item to express a variable,
+		\item for a very short and well-known formula that must not be referred and that do not contain big symbols (integral, sum, etc.).
 	\end{itemize}
 \end{frame}
 
@@ -130,7 +145,7 @@
 	\frametitle{Grouping equations}
 	\framesubtitle{No alignment inside the group}
 	
-	Tool: \texttt{gather} environment, double backslash (\textbackslash\textbackslash) before starting a new equation.
+	\structure{Tool}: \alert{\texttt{gather}} environment, double backslash (\textbackslash\textbackslash) before starting a new equation.
 	
 	Example with the local equation from Ampere theorem:
 	\begin{gather}
@@ -143,14 +158,15 @@
 			+ \varepsilon_0 \mu_0 \iint_S \frac{\partial \vec{E}}{\partial t} \cdot \mathrm{d} \vec{S}.
 	\end{gather}
 	
-	Text can be written between equations thanks to the \texttt{intertext} and \texttt{shortintertext} commands.
+	\structure{Extra}: text can be written between equations thanks to the \texttt{intertext} and \texttt{shortintertext} commands.
+	\LaTeX{} is in text-mode within these commands and in math-mode within the rest of the \texttt{gather} environment.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Grouping equations}
 	\framesubtitle{Alignment inside the group}
 	
-	Tool: \texttt{align} environment, double backslash (\textbackslash\textbackslash) before starting a new equation, ampersand (\&) to indicate where the alignment is performed.
+	\structure{Tool}: \texttt{align} environment, double backslash (\textbackslash\textbackslash) before starting a new equation, ampersand (\&) to indicate where the alignment is performed.
 	
 	Examples with the vector potential:
 	\begin{align}
@@ -158,195 +174,43 @@
 		\vec{E} &= -\vec{\nabla} V - \frac{\partial \vec{A}}{\partial t}
 	\end{align}
 	
-	 The \texttt{intertext} and \texttt{shortintertext} commands are also available.
+	 \structure{Extra}: the \texttt{intertext} and \texttt{shortintertext} commands are also available.
 	 
 	 The alignment is generally performed on the equal sign.
 \end{frame}
 
 
 %-----
-\section{Systems of equations}
+\section{Symbols for mathematics}
 
 \begin{frame}
-	\frametitle{Systems of equations}
-	\framesubtitle{Defined-by-domain functions}
+	\frametitle{Common symbols for mathematics}
 	
-	Tool: \texttt{cases} environment, which displays an opening bracket surrounding all equations included in the environment.
-	It must be included inside another mathematical equation environment.
-	As in \texttt{align}, \textbackslash\textbackslash{} before starting a new line.
-	One and only one \& per line can be used to create a column, typically used to specify the domain on which the equation is valid.
-	
-	A starred version makes the right column \emph{text-mode} instead of \emph{math-mode}.
-	A \texttt{dcases} variant makes the environment \emph{displaystyle}.
-	
-	For examples:
-	\begin{equation}
-		a = \begin{cases*}
-			x^2 + 2					& if  $x<2$  \\
-			\int x-3\, \mathrm{d}x	& otherwise
-		\end{cases*}
-	\end{equation}
-	\begin{equation}
-		a = \begin{dcases*}
-			x^2 + 2					& if  $x<2$  \\
-			\int x-3\, \mathrm{d}x	& otherwise
-		\end{dcases*}
-	\end{equation}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Systems of equations}
-	\framesubtitle{Systems using \texttt{cases}: not very efficient}
-	
-	The \texttt{cases} environment to write systems:
-	\begin{align}
-		\begin{cases}
-			x  +2y - z  = 1 \\
-			x  -3y + 2z = 4 \\
-			-x +y  +z   = 0 
-		\end{cases}
-	\end{align}
-	
-	Issues:
-	\begin{enumerate}
-		\item the whole system is numbered but it would be useful to number each line of the system $\rightarrow$ see the \enquote{cases} package,
-		\item there is no alignment between the variables like it is sometimes done in algebra.
-	\end{enumerate}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Systems of equations}
-	\framesubtitle{Numbering all lines of the system}
-	
-	Tool: \texttt{numcases} environment from the \enquote{cases} packages:
-	\begin{numcases}{}
-		x  +2y - z  = 1 \\
-		x  -3y + 2z = 4 \\
-		-x +y  +z   = 0 
-	\end{numcases}
-	
-	Can also be used for defined-by-domain functions:
-	\begin{numcases}{a=}
-		x^2 + 2					& if  $x<2$  \\
-		\int x-3\, \mathrm{d}x	& otherwise
-	\end{numcases}
-	
-	In addition to the numbering of all lines, it correspond to \texttt{dcases*}, which means that:
+	Mathematics would not be mathematics without any symbols.
+	As there is no point to show an exhaustive list of existing mathematical symbols in this tutorial, here follows a list of references:
 	\begin{itemize}
-		\item it is directly in \emph{displaystyle},
-		\item the right column is in \emph{text-mode}.
+		\item your \LaTeX{} editor, which generally provides a list of shortcuts and buttons to generate the correct commands,
+		\item a \href{https://fr.sharelatex.com/learn/List_of_Greek_letters_and_math_symbols}{quick review} of symbols from ShareLaTeX,
+		\item a \href{http://www.rpi.edu/dept/arc/training/latex/LaTeX_symbols.pdf}{big list} of symbols native from \TeX{} and coming from different packages.
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Systems of equations}
-	\framesubtitle{Alignment on variables}
-	
-	Tool: \texttt{systeme} command from the \enquote{systeme} packages.
-	Works outside any math environment and inside \texttt{equation}.
-	Commas (,) used to separate equations.
-	
-	Example:
-	\begin{equation}
-		\systeme{%
-			x  +2y - z  = 1,
-			x  -3y + 2z = 4,
-			-x +y  +z   = 0}
-	\end{equation}
-	
-	Issue: the numbering counter used by the \texttt{systeme} command is independent from the \LaTeX{}'s equation internal counter.
 \end{frame}
 
 
 %-----
-\section{Matrices}
-
-\begin{frame}
-	\frametitle{Matrices}
-	\framesubtitle{Types of matrices}
-	
-	Matrices can be written by using a \texttt{matrix}-like environment inside a mathematical equation environment such as the ones presented here above.
-	
-	Several types of matrices exist.
-	They differ with the type of delimiters surrounding the matrix:
-	\begin{align*}
-		\text{\texttt{matrix}} && \text{\texttt{pmatrix}} && \text{\texttt{bmatrix}} && \text{\texttt{Bmatrix}} \\
-		%
-		\begin{matrix}
-			x_{11} & x_{12} \\
-			x_{21} & x_{22} \\
-		\end{matrix} 
-		&&
-		\begin{pmatrix}
-			x_{11} & x_{12} \\
-			x_{21} & x_{22} \\
-		\end{pmatrix}
-		&&
-		\begin{bmatrix}
-			x_{11} & x_{12} \\
-			x_{21} & x_{22} \\
-		\end{bmatrix}
-		&&
-		\begin{Bmatrix}
-			x_{11} & x_{12} \\
-			x_{21} & x_{22} \\
-		\end{Bmatrix} \\
-		%
-		%
-		&& \text{\texttt{vmatrix}} && \text{\texttt{Vmatrix}} && \\
-		%
-		&&
-		\begin{vmatrix}
-			x_{11} & x_{12} \\
-			x_{21} & x_{22} \\
-		\end{vmatrix}
-		&&
-		\begin{Vmatrix}
-			x_{11} & x_{12} \\
-			x_{21} & x_{22} \\
-		\end{Vmatrix}
-		&& \\
-	\end{align*}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Matrices}
-	\framesubtitle{Alignment}
-	
-	By default, numbers are centred in each column of a matrix:
-	\begin{equation*}
-		\begin{pmatrix}
-			2  & -3 \\
-			42 & 0
-		\end{pmatrix}
-	\end{equation*}
-	
-	A starred version of each \texttt{matrix} environment offers an optional argument where the alignment can be provided through a letter: \texttt{c} for center, \texttt{r} for right and \texttt{l} for left.
-	Example with right alignment:
-	\begin{equation*}
-		\begin{pmatrix*}[r]
-			2  & -3 \\
-			42 & 0
-		\end{pmatrix*}
-	\end{equation*}
-\end{frame}
-
-
-%-----
-\section{Laying out the mathematics}
-
-\begin{frame}
-	\frametitle{Package options for layout modification}
-
-	It is possible to change the layout of equations thanks to package options:
-	\begin{itemize}
-		\item position of equation numbers
-		\begin{itemize}
-			\item on the right (default) with the \texttt{reqno} option,
-			\item on the left with the \texttt{leqno} option.
-		\end{itemize}
-	\end{itemize}
-\end{frame}
+%\section{Laying out the mathematics}
+%
+%\begin{frame}
+%	\frametitle{Package options for layout modification}
+%
+%	It is possible to change the layout of equations thanks to package options:
+%	\begin{itemize}
+%		\item position of equation numbers
+%		\begin{itemize}
+%			\item on the right (default) with the \texttt{reqno} option,
+%			\item on the left with the \texttt{leqno} option.
+%		\end{itemize}
+%	\end{itemize}
+%\end{frame}
 
 
 % *** References *** %
