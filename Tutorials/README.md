@@ -22,7 +22,7 @@ Each tutorial is contained in a folder which includes the following documents:
 |  B005   | LaTeX Vocabulary				| Preamble & document, package & class, commands and environments.		| TD		|
 |  B100   | Mathematics	 - Basics			| Basics to write mathematics with LaTeX.								| V			|
 |  C100   | Maths - Systems					| Systems of equations and functions defined by domains.				| ...		|
-|  C101   | Maths - Matrices				| Matrices with different surrounding delimiters.						| ...		|
+|  C101   | Maths - Matrices				| Matrices with different surrounding delimiters.						| V			|
 |  C102   | Maths - Derivatives				| How to write systems of equations and functions defined by domains.	| ...		|
 |  Xyyy   | References						| Clickable table of contents, references to anything (e.g., figures).	| TD		|
 |  Xyyy   | Floats							| Floats management, *sub*-environments, advanced tables.				| TD		|

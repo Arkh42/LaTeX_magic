@@ -1,0 +1,278 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+% Document class
+\documentclass[11pt]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+
+\usepackage{csquotes}
+
+\usepackage{microtype}
+
+% Mathematics
+\usepackage{mathtools}
+\usepackage{physics}
+
+% Floats
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+% References
+\usepackage{cleveref}
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+% Information
+\title{Mathematics}
+\subtitle{Matrices}
+\author[A. Quenon]{Alexandre Quenon}
+
+% Text
+\begin{document}
+% *** Title page *** %
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+% *** Contents *** %
+\begin{frame}
+	\frametitle{Overview}
+	
+	\tableofcontents
+\end{frame}
+
+
+% *** Tutorial *** %
+%-----
+\section{Useful packages}
+
+\begin{frame}
+	\frametitle{Packages for matrices}
+
+	Some packages very useful for mathematics and specifically for matrix computations are listed here below:
+	\begin{itemize}
+		\item \emph{mathtools} which is mainly an upgrade of the very well-known \emph{amsmath} package (the backbone for mathematics with \LaTeX{}),
+		\item \emph{physics} which provides the \texttt{numcases} command to number all lines of a system of equations.
+	\end{itemize}
+\end{frame}
+
+
+%-----
+\section{Matrices: principle}
+
+\begin{frame}
+	\frametitle{Matrices: principle}
+	\framesubtitle{Types of matrices}
+	
+	Matrices can be written by using a \texttt{matrix}-like environment inside a mathematical equation environment such as the ones presented in B100 tutorial.
+	
+	Several types of matrices exist.
+	They differ with the type of delimiters surrounding the matrix:
+	\begin{align*}
+		\text{\texttt{matrix}} && \text{\texttt{pmatrix}} && \text{\texttt{bmatrix}} && \text{\texttt{Bmatrix}} \\
+		%
+		\begin{matrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{matrix} 
+		&&
+		\begin{pmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{pmatrix}
+		&&
+		\begin{bmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{bmatrix}
+		&&
+		\begin{Bmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{Bmatrix} \\
+		%
+		%
+		&& \text{\texttt{vmatrix}} && \text{\texttt{Vmatrix}} && \\
+		%
+		&&
+		\begin{vmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{vmatrix}
+		&&
+		\begin{Vmatrix}
+			x_{11} & x_{12} \\
+			x_{21} & x_{22} \\
+		\end{Vmatrix}
+		&& \\
+	\end{align*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Matrices: principle}
+	\framesubtitle{Alignment within the matrix}
+	
+	By default, numbers are centred in each column of a matrix:
+	\begin{equation*}
+		\begin{pmatrix}
+			2  & -3 \\
+			42 & 0
+		\end{pmatrix}
+	\end{equation*}
+	
+	A starred version of each \texttt{matrix} environment offers an optional argument where the alignment can be provided through a letter: \texttt{c} for center, \texttt{r} for right and \texttt{l} for left.
+	Example with right alignment:
+	\begin{equation*}
+		\begin{pmatrix*}[r]
+			2  & -3 \\
+			42 & 0
+		\end{pmatrix*}
+	\end{equation*}
+\end{frame}
+
+
+%-----
+\section{More facilities}
+
+\begin{frame}
+	\frametitle{More facilities}
+	\framesubtitle{Specific matrices (1)}
+	
+	\structure{Zero matrix}: \texttt{zeromatrix} or the shorter \texttt{zmat} command.
+	
+	Examples:
+	\begin{align*}
+		\begin{pmatrix}
+			\zmat{2}
+		\end{pmatrix}
+		&&
+		\begin{bmatrix}
+			\zmat{3}
+		\end{bmatrix}
+		&&
+		\begin{vmatrix}
+			\zmat{4}
+		\end{vmatrix}
+	\end{align*}
+	
+
+	\structure{Identity matrix}: \texttt{identitymatrix} or the shorter \texttt{imat} command.
+	
+	Examples:
+	\begin{align*}
+		\begin{pmatrix}
+			\imat{2}
+		\end{pmatrix}
+		&&
+		\begin{bmatrix}
+			\imat{3}
+		\end{bmatrix}
+		&&
+		\begin{vmatrix}
+			\imat{4}
+		\end{vmatrix}
+	\end{align*}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{More facilities}
+	\framesubtitle{Specific matrices (2)}
+	
+	\structure{Diagonal matrix}: \texttt{diagonalmatrix} or the shorter \texttt{dmat} command.
+	Optional argument to fill spaces.
+	
+	Examples:
+	\begin{align*}
+		\begin{pmatrix}
+			\dmat{a,b,c}
+		\end{pmatrix}
+		&&
+		\begin{pmatrix}
+			\dmat{1,2,3}
+		\end{pmatrix}
+		&&
+		\begin{pmatrix}
+			\dmat[0]{1,2,3}
+		\end{pmatrix}
+	\end{align*}
+	
+	
+	\structure{Automatically filled matrix}: \texttt{xmatrix} or the shorter \texttt{xmat} command.
+	The starred version creates automatic indices.
+	
+	Examples:
+	\begin{align*}
+		\begin{pmatrix}
+			\xmat{1}{2}{3}
+		\end{pmatrix}
+		&&
+		\begin{pmatrix}
+			\xmat*{x}{3}{3}
+		\end{pmatrix}
+		&&
+		\begin{pmatrix}
+			\xmat*{x}{3}{1}
+		\end{pmatrix}
+	\end{align*}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{More facilities}
+	\framesubtitle{Combinations of patterns}
+	
+	\structure{Simple way}: use one of the previous commands, then add the other elements above and/or below like in a \enquote{regular} matrix.
+	
+	Examples:
+	\begin{align*}
+		\begin{pmatrix}
+			\imat{2} \\ a & b
+		\end{pmatrix}
+		&&
+		\begin{pmatrix}
+			a & b & c \\
+			\zmat{2}{3}
+		\end{pmatrix}
+	\end{align*}
+	
+	Issue: impossible to add elements on the right or on the left of a submatrix generated with the \emph{physics}' commands.
+	
+
+	\structure{Matrix as a single element}: \texttt{matrixquantity} or the shorter \texttt{mqty} command. 
+	
+	Example:
+	\begin{equation*}
+		\begin{pmatrix}
+			\mqty{\imat{2}} & \mqty{e\\d} \\
+			\mqty{a & b} & c
+		\end{pmatrix}
+	\end{equation*}
+\end{frame}
+
+
+\end{document}
