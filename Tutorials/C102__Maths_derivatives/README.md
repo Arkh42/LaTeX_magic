@@ -1,13 +1,10 @@
-# Mathematics - Basics
+# Mathematics - Professional style
 
-This first tutorial on mathematics aims the basics of writing mathematics with LaTeX.
-It includes:
-* difference between text-mode and math-mode,
-* the *equation* environment,
-* inline equations and *displaystyle*,
-* groups of equations (*gather* and *align* environments).
-
-Other usual questions related to mathematics are adressed in the C1xx tutorials.
+Writing style related to mathematics can be mind blowing.
+For instance, variables should be written in a slanted font while the 'd' of the differential operator should be in normal roman.
+Whereas beginners would see this as an unnecessary detail, professional scientists and engineer see the difference.
+Hence the question: "How can we manage the style without loosing our mind"?
+This tutorial tries to answer the question, mainly based on the *physics* package.
 
 
 ## References
@@ -16,16 +13,7 @@ CTAN documentation:
 * the [mathtools](https://ctan.org/pkg/mathtools) package,
 * the [amsmath](https://ctan.org/pkg/amsmath) package,
 * more about [amsmath](https://ctan.org/pkg/latex-amsmath),
-* the [cases](https://ctan.org/pkg/cases) package,
-* the [systeme](https://ctan.org/pkg/systeme) package,
 * the [physics](https://ctan.org/pkg/physics) package.
-
-Fora about mathematics with LaTeX:
-* [Why is \[ … \] preferable to $$ … $$?](https://tex.stackexchange.com/questions/503/why-is-preferable-to),
-* [What are the differences between $$, \[, align, equation and displaymath?](https://tex.stackexchange.com/questions/40492/what-are-the-differences-between-align-equation-and-displaymath),
-* [What is the difference between \notag and \nonumber in align environment?](https://tex.stackexchange.com/questions/48965/what-is-the-difference-between-notag-and-nonumber-in-align-environment).
-
-Wikipédia about [Équations de Maxwell](https://fr.wikipedia.org/wiki/%C3%89quations_de_Maxwell).
 
 
 ## Compilation information
