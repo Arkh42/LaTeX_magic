@@ -18,7 +18,7 @@ Each tutorial is contained in a folder which includes the following documents:
 |  B001   | Installing LaTeX				| Distributions, editors, advices.										| V			|
 |  B002   | Compiling LaTeX					| Existing compilers, features, choice.									| V			|
 |  B003   | Setting Language and Typography	| Font encoding & selection, language's rules, typography.				| V			|
-|  B004   | Choosing Document Class			| Existing document classes, features, choice.							| TD		|
+|  B004   | Choosing Document Class			| Existing document classes, features, choice.							| ...		|
 |  B005   | LaTeX Vocabulary				| Preamble & document, package & class, commands and environments.		| TD		|
 |  B100   | Mathematics	 - Basics			| Basics to write mathematics with LaTeX.								| V			|
 |  C100   | Maths - Systems					| Systems of equations and functions defined by domains.				| ...		|

@@ -1,0 +1,140 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+% Document class
+\documentclass[11pt]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+
+\usepackage{csquotes}
+
+\usepackage{microtype}
+
+% Floats
+\usepackage{float}
+\usepackage{booktabs}
+
+% References
+\usepackage{cleveref}
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+% Information
+\title{Choosing a \LaTeX{} document class}
+\author[A. Quenon]{Alexandre Quenon}
+
+% Text
+\begin{document}
+% *** Title page *** %
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+% *** Contents *** %
+\begin{frame}
+	\frametitle{Overview}
+	
+	\tableofcontents
+\end{frame}
+
+
+% *** Tutorial *** %
+%-----
+\section{Review of main classes}
+
+\begin{frame}
+	\frametitle{Review of main classes}
+	\frametitle{\LaTeX{}'s standard classes}
+
+	Any \LaTeX{} distribution embeds document classes which answer to most needs: the so-called \emph{standard classes}.
+	
+	\begin{table}[h]
+		\begin{tabular}{*{3}{c}}
+			\toprule
+			 Class  & Highest heading & Heading level \\ \midrule
+			article &     section     &       0       \\
+			report  &     chapter     &       1       \\
+			 book   &      part       &       2       \\ \bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Review of main classes}
+	\frametitle{Alternate classes for common documents}
+	
+%	Any \LaTeX{} distribution embeds document classes which answer to most needs: the so-called \emph{standard classes}.
+	
+	\begin{table}[h]
+		\begin{tabular}{*{3}{c}}
+			\toprule
+			 Class   & Highest heading  & Heading level \\ \midrule
+			scrartcl &     section      &       0       \\
+			scrreprt &     chapter      &       1       \\
+			scrbook  &       part       &       2       \\
+			 memoir  &       book       &       3       \\
+			 octavo  &     chapter      &       2       \\
+			  ncc    & option-dependent &      N/A      \\
+			 novel   &       N/A        &      N/A      \\ \bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Review of main classes}
+	\frametitle{Alternate classes for other documents}
+	
+%	Any \LaTeX{} distribution embeds document classes which answer to most needs: the so-called \emph{standard classes}.
+	\structure{Paper ands journals}
+	\begin{table}[h]
+		\begin{tabular}{*{2}{c}}
+			\toprule
+			  Class    &                  Journal                   \\ \midrule
+			elsarticle &             Elsevier journals              \\
+			 IEEEtran  & IEEE Transactions journals and conferences \\ \bottomrule
+		\end{tabular}
+	\end{table}
+
+	\structure{Miscellaneous}
+	\begin{table}[h]
+		\begin{tabular}{*{2}{c}}
+			\toprule
+			   Class     &        Purpose        \\ \midrule
+			   beamer    & Presentation (slides) \\
+			  powerdot   & Presentation (slides) \\
+			  moderncv   &   Curriculum Vitae    \\
+			modernposter &   Scientific poster   \\
+			 tikzposter  &   Scientific poster   \\ \bottomrule
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+
+
+
+% *** END *** %
+\end{document}
