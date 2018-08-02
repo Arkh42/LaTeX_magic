@@ -1,0 +1,205 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+% Document class
+\documentclass[11pt]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+
+\usepackage{csquotes}
+
+\usepackage{microtype}
+
+% Mathematics
+\usepackage{mathtools}
+\usepackage{cases}
+\usepackage{systeme}
+
+% Floats
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+% References
+\usepackage{cleveref}
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+% Information
+\title{Mathematics}
+\author[A. Quenon]{Alexandre Quenon}
+
+% Text
+\begin{document}
+% *** Title page *** %
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+% *** Contents *** %
+\begin{frame}
+	\frametitle{Overview}
+	
+	\tableofcontents
+\end{frame}
+
+
+% *** Tutorial *** %
+%-----
+\section{Useful packages}
+
+\begin{frame}
+	\frametitle{Packages for systems of equations}
+
+	Some packages very useful for mathematics are listed here below:
+	\begin{itemize}
+		\item \emph{mathtools} which is mainly an upgrade of the very well-known \enquote{amsmath} package (the backbone for mathematics with \LaTeX{}),
+		\item \emph{cases} which provides the \texttt{numcases} command to number all lines of a system of equations, and
+		\item \emph{systeme} which proposes tools to improve the display of the variables of the system.
+	\end{itemize}
+\end{frame}
+
+
+%-----
+\section{Functions defined by domain}
+
+\begin{frame}
+	\frametitle{Functions defined by domain}
+	
+	\structure{Tool}: \texttt{cases} environment, \textbackslash\textbackslash{} before starting a new line, maximum one \& per line.
+	Must be included inside another mathematical equation environment.
+	
+	For examples:
+	\begin{equation}
+		a = \begin{cases}
+			x^2 + 2					& \text{if} x<2  \\
+			\int x-3\, \mathrm{d}x	& \text{if} x \geq 2
+		\end{cases}
+	\end{equation}
+	\begin{equation}
+		a = \begin{dcases*}
+			x^2 + 2					& if  $x<2$  \\
+			\int x-3\, \mathrm{d}x	& otherwise
+		\end{dcases*}
+	\end{equation}
+	
+	
+	\structure{Extra}: a starred version makes the right column \emph{text-mode} instead of \emph{math-mode}.
+	A \texttt{dcases} variant makes the environment \emph{displaystyle}.
+	An \texttt{rcases} variant creates a closing bracket on the right side.
+\end{frame}
+
+
+%-----
+\section{Systems of equations}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{One number for the whole system}
+	
+	\structure{Tool}:  \texttt{cases} environment (same as for defined-by-domain function).
+	
+	Example:
+	\begin{align}
+		\begin{cases}
+			x  +2y - z  = 1 \\
+			x  -3y + 2z = 4 \\
+			-x +y  +z   = 0 
+		\end{cases}
+	\end{align}
+	
+	
+	\structure{Issues}:
+	\begin{enumerate}
+		\item only one number the whole system but it would be useful to number each line of the system $\rightarrow$ see the \emph{cases} package,
+		\item there is no alignment between the variables like it is sometimes done in algebra $\rightarrow$ see the \emph{systeme} package.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Numbering all lines of the system (1)}
+	
+	\structure{Tool}: \texttt{numcases} environment from the \emph{cases} package, \textbackslash\textbackslash{} before starting a new line, maximum one \& per line.
+	
+	Examples:
+	\begin{numcases}{}
+		x  +2y - z  = 1 \\
+		x  -3y + 2z = 4 \\
+		-x +y  +z   = 0 
+	\end{numcases}
+	
+	\begin{numcases}{a=}
+		x^2 + 2					& if  $x<2$  \\
+		\int x-3\, \mathrm{d}x	& otherwise
+	\end{numcases}
+	
+	
+	\structure{Extra}: it corresponds to \texttt{dcases*} with all lines numbered, which means that:
+	\begin{itemize}
+		\item it is directly in \emph{displaystyle},
+		\item the right column is in \emph{text-mode}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Numbering all lines of the system (2)}
+	
+	\structure{Numbering style}: \texttt{subnumcases} uses the same number and adds a letter in the equation tag.
+	
+	Example:
+	\begin{subnumcases}{}
+		x  +2y - z  = 1 \\
+		x  -3y + 2z = 4 \\
+		-x +y  +z   = 0 
+	\end{subnumcases}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Systems of equations}
+	\framesubtitle{Alignment on variables}
+	
+	\structure{Tool}: \texttt{systeme} command from the \emph{systeme} package, commas (,) used to separate equations.
+	Works outside any math environment as well as inside \texttt{equation}.
+	
+	Example:
+	\begin{equation}
+		\systeme{%
+			x  +2y - z  = 1,
+			x  -3y + 2z = 4,
+			-x +y  +z   = 0}
+	\end{equation}
+	
+	
+	\structure{Issue}: the numbering counter used by the \texttt{systeme} command seems to not work properly the \LaTeX{}'s equation internal counter.
+	Consequently, use it inside an \texttt{equation} environment.
+\end{frame}
+
+
+
+
+% *** END *** %
+\end{document}
