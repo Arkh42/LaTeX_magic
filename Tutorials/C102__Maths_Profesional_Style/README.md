@@ -1,6 +1,7 @@
 # Mathematics - Professional style
 
 Writing style related to mathematics can be mind blowing.
+Confusion arise from the fact that handwritten notations that we learn in primary and secondary school are usually far from "true" notations.
 For instance, variables should be written in a slanted font while the 'd' of the differential operator should be in normal roman.
 Whereas beginners would see this as an unnecessary detail, professional scientists and engineer see the difference.
 Hence the question: "How can we manage the style without loosing our mind"?

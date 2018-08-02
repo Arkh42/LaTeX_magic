@@ -1,0 +1,249 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+% Document class
+\documentclass[11pt]{beamer}
+
+\usetheme{Boadilla}
+\usecolortheme{beaver}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Font
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{french}
+
+\usepackage{csquotes}
+
+\usepackage{microtype}
+
+% Mathematics
+\usepackage{mathtools}
+\usepackage{physics}
+
+% Floats
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+% References
+\usepackage{cleveref}
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+% Information
+\title{Mathematics}
+\subtitle{Professional style}
+\author[A. Quenon]{Alexandre Quenon}
+
+% Text
+\begin{document}
+% *** Title page *** %
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+% *** Contents *** %
+\begin{frame}
+	\frametitle{Overview}
+	
+	\tableofcontents
+\end{frame}
+
+
+% *** Tutorial *** %
+%-----
+\section{Useful packages}
+
+\begin{frame}
+	\frametitle{Packages for professional styling}
+
+	Some packages very useful for mathematics and specifically for matrix computations are listed here below:
+	\begin{itemize}
+		\item \emph{mathtools} which is mainly an upgrade of the very well-known \emph{amsmath} package (the backbone for mathematics with \LaTeX{}),
+		\item \emph{physics} which provides macros to handle efficiently mathematics professional styling.
+	\end{itemize}
+\end{frame}
+
+
+%-----
+\section{Various macros}
+
+\begin{frame}
+	\frametitle{Various macros}
+	
+	\structure{Absolute value}: \texttt{absolutevalue} command or the shorter form \texttt{abs}.
+	Automatic sizing, starred version to cancel it.
+	
+	Examples:
+	\begin{equation*}
+		\abs{a}, \quad
+		\abs{a^2}, \quad
+		\abs{\frac{a}{b}}, \quad
+		\abs*{\frac{a}{b}} \, \text{(starred)}
+	\end{equation*}
+	
+	
+	\structure{Norm}: \texttt{norm} command.
+	Automatic sizing, starred version to cancel it.
+	
+	Examples:
+	\begin{equation*}
+		\norm{a}, \quad
+		\abs{a^2}, \quad
+		\norm{\frac{a}{b}}, \quad
+		\norm*{\frac{a}{b}} \, \text{(starred)}
+	\end{equation*}
+	
+	
+	\structure{Order}: \texttt{order} command.
+	Automatic sizing, starred version to cancel it.
+	
+	Examples:
+	\begin{equation*}
+		\order{x}, \quad
+		\order{x^2}, \quad
+		\order{\frac{1}{x}}, \quad
+		\order*{\frac{1}{x}} \, \text{(starred)}
+	\end{equation*}
+\end{frame}
+
+
+%-----
+\section{Named functions}
+
+\begin{frame}
+	\frametitle{Named functions}
+	
+	Named functions, such as trigonometric (sinus, cosinus, etc.) or logarithmic, must be written in upright font because they are not variables.
+	To do so, \emph{mathtools} defines intuitive commands and \emph{physics} extends them.
+	For instance, \texttt{sin} for a sinus and \texttt{log} for logarithm, which are actually the true notations.
+	An optional argument allows to pass a power to the function.
+	
+	Compare the wrong and correction notations:
+	\begin{itemize}
+		\item $sin(x)$ VS $\sin(x)$,
+		\item $log(x)$ VS $\log[2](x)$,
+		\item $Re(z)$ VS $\Re(z)$ ($\real(z)$ still accepted).
+	\end{itemize}
+\end{frame}
+
+
+%-----
+\section{Vectors}
+
+\begin{frame}
+	\frametitle{Vectors}
+	\framesubtitle{Notations}
+	
+	\structure{Basic style}: to indicate that a variable is a vector and not a scalar, people usually put an arrow above the variable, especially for handwritten documents.
+	Tool: \texttt{vec} command.
+	
+	Example:
+	\begin{equation*}
+		\vec{a}, \quad
+		\norm{\vec{a}}
+	\end{equation*}
+	
+
+	\structure{Professional style}: professional vector notation consists in putting the variable in bold font.
+	Tool: \texttt{vectorbold} command, or the shorter form \texttt{vb}, from the \emph{physics} package.
+	
+	In addition, unit vectors should be written in bold font with a hat.
+	Tool: \texttt{vectorunit}, or the shorter form \texttt{vu}.
+	
+	Example:
+	\begin{equation*}
+		\vb{a}, \quad
+		\norm{\vb{a}}, \quad
+		\vb{a} = a_x \vu{i} + a_y\vu{j} + a_z\vu{k}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Vectors}
+	\framesubtitle{Operators}
+	
+	\structure{Products}:
+	\begin{itemize}
+		\item inner/scalar/dot product $\rightarrow$ \texttt{dotproduct}, \texttt{vdot},
+		\item cross product $\rightarrow$ \texttt{crossproduct}, \texttt{cross}, \texttt{cp}.
+	\end{itemize}
+	
+	Examples:
+	\begin{equation*}
+		\vb{a} \vdot \vb{b}, \quad
+		\vb{a} \cp \vb{b}
+	\end{equation*}
+	
+	
+	\structure{Gradient-based operators}:
+	\begin{itemize}
+		\item gradient/nabla $\rightarrow$ \texttt{gradient}, \texttt{grad},
+		\item divergence $\rightarrow$ \texttt{divergence}, \texttt{div},
+		\item curl/rotational $\rightarrow$ \texttt{curl}
+		\item Laplace operator/Laplacian $\rightarrow$ \texttt{laplacian}.
+	\end{itemize}
+	
+	Examples:
+	\begin{equation*}
+		\grad{\Psi}, \quad
+		\div, \quad
+		\curl, \quad
+		\laplacian{\Psi}
+	\end{equation*}
+\end{frame}
+
+
+%-----
+\section{Differentials and derivatives}
+
+\begin{frame}
+	\frametitle{Differentials and derivatives}
+	
+	\structure{Differential}: the `d' symbol must be in upright font because it is not a variable.
+	Tool: \texttt{differential}, or the shorter form \texttt{dd}.
+	Optional argument to pass the power.
+	
+	Examples:
+	\begin{equation*}
+		\dd, \quad
+		\dd{x}, \quad
+		\dd[2]{x}, \quad
+		\dd(\cos\theta)
+	\end{equation*}
+	
+	
+	\structure{Derivative}: same remark as for differential.
+	Very long to write with \enquote{regular} \LaTeX{}.
+	Tools: \texttt{derivative} or \texttt{dv} for \enquote{normal} derivative and \texttt{partialderivative} or \texttt{pdv} for partial derivative.
+	Starred version to make it \emph{inline}.
+	
+	Examples:
+	\begin{equation*}
+		\dv{t}, \quad
+		\dv{f}{x}, \quad
+		\dv{\theta}(\cos[2](\theta)), \quad
+		\pdv[n]{f}{x}, \quad
+		\pdv{f}{x}{y}
+	\end{equation*}
+\end{frame}
+
+
+
+\end{document}
