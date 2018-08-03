@@ -30,6 +30,9 @@
 \usepackage{float}
 \usepackage{booktabs}
 
+% Scientific
+\usepackage{siunitx}
+
 % References
 \usepackage{cleveref}
 
@@ -62,25 +65,147 @@
 
 % *** Tutorial *** %
 %-----
-\section{Review of main classes}
+\section{What a document class is}
+
+\begin{frame}[fragile]
+	\frametitle{What a document class is}
+	\framesubtitle{Introduction}
+	
+	\structure{Command}.
+	In the a \LaTeX{} file, the first line of code is generally:
+	\verb+\documentclass{class-name}+.
+	As the command name states, it corresponds to the choice of a document class.
+	
+	
+	\structure{Effects}.
+	The document class has several effects, including:
+	\begin{itemize}
+		\item the type of document which is generated (report, slides, etc.),
+		\item the base layout of the document (level of headings, base font size, margins\ldots),
+		\item sometimes an automatic call to specific packages or a limitation in packages that can be loaded.
+	\end{itemize}
+	We will return to what a \enquote{package} is in tutorial B005.
+\end{frame}
 
 \begin{frame}
-	\frametitle{Review of main classes}
-	\frametitle{\LaTeX{}'s standard classes}
-
+	\frametitle{What a document class is}
+	\framesubtitle{Standard classes}
+	
 	Any \LaTeX{} distribution embeds document classes which answer to most needs: the so-called \emph{standard classes}.
 	
+	They are generally sufficient for most people but they can suffer from the drawbacks listed below:
+	\begin{itemize}
+		\item not well-suited to European standards (e.g., margins),
+		\item limited or complicated possibilities of layout modifications,
+		\item too \enquote{mainstream} (no, I'm kidding).
+	\end{itemize}
+
+
+	To answer specific needs, the big \LaTeX{} community has proposed many \emph{alternative classes} \cite{CTAN_Class}.
+	Nevertheless, the user must be aware that:
+	\begin{itemize}
+		\item some classes might not be available in all \LaTeX{} distributions,
+		\item some classes are marginally used (so is the maintenance).
+	\end{itemize}
+
+	Hence this tutorial which does not aim to present an exhaustive list of all existing classes but rather to show some interesting ones.
+\end{frame}
+
+
+%-----
+\section{Classes for common documents}
+
+\begin{frame}
+	\frametitle{Classes for common documents}
+	\framesubtitle{\LaTeX{}'s standard classes: presentation}
+	
+	The table below presents the main standard classes used for most of the documents that are written:
 	\begin{table}[h]
 		\begin{tabular}{*{3}{c}}
 			\toprule
-			 Class  & Highest heading & Heading level \\ \midrule
+			 Class  & \multicolumn{2}{c}{Highest heading} \\ \cmidrule{2-3}
+			        &      Name       &     Level     \\ \midrule
 			article &     section     &       0       \\
 			report  &     chapter     &       1       \\
 			 book   &      part       &       2       \\ \bottomrule
 		\end{tabular}
 	\end{table}
+	Refer to the \enquote{*\_complier\_\_std\_*} files in the \enquote{Examples} folder to see the difference.
 \end{frame}
 
+\begin{frame}[fragile]
+	\frametitle{Classes for common documents}
+	\framesubtitle{\LaTeX{}'s standard classes: options review (1)}
+	
+	
+	\structure{Paper size}.
+	By default, the document is a portrait paper. 
+	It is possible to use the \texttt{landscape} option.
+	
+	Most common options are:
+	\begin{table}[h]
+		\begin{tabular}{*{3}{c}}
+			\toprule
+			     Option      & \multicolumn{2}{c}{Physical dimensions} \\
+			 \cmidrule{2-3}  &    Height     &          Width          \\ \midrule
+			\texttt{a4paper} & \SI{297}{\mm} &      \SI{210}{\mm}      \\
+			\texttt{a5paper} & \SI{210}{\mm} &      \SI{148}{\mm}      \\
+			\texttt{b5paper} & \SI{250}{\mm} &      \SI{176}{\mm}      \\ \bottomrule
+		\end{tabular}
+	\end{table}
+
+	The physical dimensions are accessible within the document with the \verb|\paperwidth| and \verb|\paperheight| commands.
+	
+	
+	\vspace*{1ex}
+	
+	
+	\structure{Font size}.
+	Three options: \texttt{10pt}, \texttt{11pt}, \texttt{12pt}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Classes for common documents}
+	\framesubtitle{\LaTeX{}'s standard classes: options review (2)}
+	
+	
+	\structure{Printed sides}.
+	Two options: \texttt{oneside} (default for article and report), \texttt{twoside} (default for book).
+	
+	
+	\structure{Chapter starting page}.
+	Two options:
+	\begin{enumerate}
+		\item \texttt{openright} to force chapters to start on a right-hand page by creating an empty left-hand page if necessary,
+		\item \texttt{openany} to start chapters on any page.
+	\end{enumerate}
+	These options are not valid for article as there are no chapters.
+	
+	
+	\vspace*{1ex}
+	
+	
+	\structure{Number of columns}
+	Two options: \texttt{onecolumn}, \texttt{twocolumn}.
+	
+	
+	\vspace*{1ex}
+	
+	
+	\structure{Maths-related options}.
+	
+	By default, equation tags (numbers) are created on the right-hand side.
+	This is modified by the \texttt{leqno} option.
+	
+	By default, displayed math environments (cf. tutorial B100) are centred.
+	They can be flushed left with the \texttt{fleqn} option.
+\end{frame}
+
+
+
+
+%-----
+\section{TO SORT}
 
 \begin{frame}
 	\frametitle{Review of main classes}
@@ -134,7 +259,18 @@
 \end{frame}
 
 
+% *** References *** %
+\section{References}
 
+\begin{frame}
+	\frametitle{References}
+	
+	\begin{thebibliography}{Biblio}
+		\bibitem[CTAN]{CTAN_Class}
+		Comprehensive \TeX{} Archive Network (CTAN).
+		\newblock Class, \url{https://ctan.org/topic/class}.
+	\end{thebibliography}
+\end{frame}
 
 % *** END *** %
 \end{document}

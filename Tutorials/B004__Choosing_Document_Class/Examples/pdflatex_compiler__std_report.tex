@@ -1,0 +1,93 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[11pt, a4paper]{report}
+
+% Font
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Language and typography
+\usepackage[main=english, french]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+% Lorem Ipsum (for test purpose)
+\usepackage{lipsum}
+
+
+%% Document
+% ---------
+
+% Information
+\title{A \LaTeX{} standard report example}
+\author{Alexandre Quenon}
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+\tableofcontents
+
+
+\chapter{A chapter}
+
+	\lipsum[1]
+
+
+	\section{A section}
+	
+		\lipsum[2]
+		
+		
+		\subsection{A subsection}
+		
+			\lipsum[3]
+			
+			
+			\subsubsection{A subsubsection}
+			
+				\lipsum[4]
+				
+				
+				\paragraph{A paragraph}
+				
+					\lipsum[5]
+					
+					
+					\subparagraph{A subparagraph}
+					
+						\lipsum[6]
+	
+
+\chapter*{An unnumbered chapter}
+\addcontentsline{toc}{chapter}{An unnumbered chapter}
+
+	\lipsum[1]
+	
+	
+	\section*{An unnumbered section}
+	\addcontentsline{toc}{section}{An unnumbered section}
+	
+		\lipsum[2]
+		
+		
+		\subsection*{An unnumbered subsection}
+		\addcontentsline{toc}{subsection}{An unnumbered subsection}
+		
+			\lipsum[3]
+
+
+
+
+%******end******
+\end{document}

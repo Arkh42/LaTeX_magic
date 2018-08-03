@@ -1,0 +1,87 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[11pt, a4paper]{article}
+
+% Font
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Language and typography
+\usepackage[main=english, french]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+% Lorem Ipsum (for test purpose)
+\usepackage{lipsum}
+
+
+%% Document
+% ---------
+
+% Information
+\title{A \LaTeX{} standard article example}
+\author{Alexandre Quenon}
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+\tableofcontents
+
+
+\section{A section}
+
+	\lipsum[1]
+	
+	
+	\subsection{A subsection}
+	
+		\lipsum[2]
+		
+		
+		\subsubsection{A subsubsection}
+		
+			\lipsum[3]
+			
+			
+			\paragraph{A paragraph}
+			
+				\lipsum[4]
+				
+				
+				\subparagraph{A subparagraph}
+				
+					\lipsum[5]
+
+
+\section*{An unnumbered section}
+\addcontentsline{toc}{section}{An unnumbered section}
+
+	\lipsum[1]
+	
+	
+	\subsection*{An unnumbered subsection}
+	\addcontentsline{toc}{subsection}{An unnumbered subsection}
+	
+		\lipsum[2]
+		
+		
+		\subsubsection*{An unnumbered subsubsection}
+			\addcontentsline{toc}{subsubsection}{An unnumbered subsubsection}
+			
+			\lipsum[3]
+
+
+
+%******end******
+\end{document}
