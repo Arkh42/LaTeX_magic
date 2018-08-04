@@ -1,0 +1,101 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[fontsize=11pt, paper=portait,A4]{scrartcl}
+
+% Font
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Language and typography
+\usepackage[main=english, french]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+% Lorem Ipsum (for test purpose)
+\usepackage{lipsum}
+
+
+%% Document
+% ---------
+
+% Information
+\title{A \LaTeX{} KOMA-Script article example}
+\subtitle{Compiled with PDF\LaTeX{}}
+\author{Alexandre Quenon}
+\date{\today}
+\dedication{Dedicated to all \LaTeX{} users.}
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+\tableofcontents
+
+
+\begin{abstract}
+	An abstract of the document.
+	
+	\lipsum[1-2]
+\end{abstract}
+
+
+\section{A section}
+
+	\lipsum[1]
+	
+	
+	\subsection{A subsection}
+	
+		\lipsum[2]
+		
+		
+		\subsubsection{A subsubsection}
+		
+			\lipsum[3]
+			
+			
+			\paragraph{A paragraph}
+			
+				\lipsum[4]
+				
+				
+				\subparagraph{A subparagraph}
+				
+					\lipsum[5]
+				
+				
+					\minisec{A minisec}
+					
+						\lipsum[6]
+
+
+\addsec{An unnumbered section}
+
+	\lipsum[1]
+	
+	
+	\subsection*{An unnumbered subsection}
+	\addcontentsline{toc}{subsection}{An unnumbered subsection}
+	
+		\lipsum[2]
+		
+		
+		\subsubsection*{An unnumbered subsubsection}
+			\addcontentsline{toc}{subsubsection}{An unnumbered subsubsection}
+			
+			\lipsum[3]
+
+
+
+%******end******
+\end{document}

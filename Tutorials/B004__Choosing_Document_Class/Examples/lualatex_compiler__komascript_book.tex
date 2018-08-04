@@ -1,0 +1,134 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[fontsize=11pt, paper=portait,A4]{scrbook}
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\setotherlanguage{french}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage{microtype}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+% Lorem Ipsum (for test purpose)
+\usepackage{lipsum}
+
+
+%% Document
+% ---------
+
+% Information
+\title{A \LaTeX{} KOMA-Script book example}
+\subtitle{Compiled with Lua\LaTeX{}}
+\author{Alexandre Quenon}
+\date{\today}
+\dedication{Dedicated to all \LaTeX{} users.}
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+
+%******front matter******
+\frontmatter
+
+\tableofcontents
+
+
+%******main matter******
+\mainmatter
+
+
+\part{A part}
+
+	\lipsum
+
+
+\chapter{A chapter}
+
+	\lipsum[1]
+
+
+	\section{A section}
+	
+		\lipsum[2]
+		
+		
+		\subsection{A subsection}
+		
+			\lipsum[3]
+			
+			
+			\subsubsection{A subsubsection}
+			
+				\lipsum[4]
+				
+				
+				\paragraph{A paragraph}
+				
+					\lipsum[5]
+					
+					
+					\subparagraph{A subparagraph}
+					
+						\lipsum[6]
+						
+						
+						\minisec{A minisec}
+						
+							\lipsum[7]
+	
+
+\addchap{An unnumbered chapter}
+
+	\lipsum[1]
+	
+	
+	\addsec{An unnumbered section}
+	
+		\lipsum[2]
+		
+		
+		\subsection*{An unnumbered subsection}
+		\addcontentsline{toc}{subsection}{An unnumbered subsection}
+		
+			\lipsum[3]
+
+
+\appendix
+\chapter{An appendix}
+
+	\lipsum
+
+
+
+%******back matter******
+\backmatter
+
+\chapter{Bibliography}
+
+	\lipsum[1]
+
+
+\chapter{Index}
+
+	\lipsum[1]
+
+
+%******end******
+\end{document}

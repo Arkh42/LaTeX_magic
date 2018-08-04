@@ -1,0 +1,105 @@
+%% Preamble
+% ---------
+
+% Document class
+\documentclass[fontsize=11pt, paper=portait,A4]{scrreprt}
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\setotherlanguage{french}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage{microtype}
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+% Lorem Ipsum (for test purpose)
+\usepackage{lipsum}
+
+
+%% Document
+% ---------
+
+% Information
+\title{A \LaTeX{} KOMA-Script report example}
+\subtitle{Compiled with Lua\LaTeX{}}
+\author{Alexandre Quenon}
+\date{\today}
+\dedication{Dedicated to all \LaTeX{} users.}
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+\tableofcontents
+
+
+\begin{abstract}
+	An abstract of the document.
+	
+	\lipsum[1-2]
+\end{abstract}
+
+
+\chapter{A chapter}
+
+	\lipsum[1]
+
+
+	\section{A section}
+	
+		\lipsum[2]
+		
+		
+		\subsection{A subsection}
+		
+			\lipsum[3]
+			
+			
+			\subsubsection{A subsubsection}
+			
+				\lipsum[4]
+				
+				
+				\paragraph{A paragraph}
+				
+					\lipsum[5]
+					
+					
+					\subparagraph{A subparagraph}
+					
+						\lipsum[6]
+	
+
+\addchap{An unnumbered chapter}
+
+	\lipsum[1]
+	
+	
+	\addsec{An unnumbered section}
+	
+		\lipsum[2]
+		
+		
+		\subsection*{An unnumbered subsection}
+		\addcontentsline{toc}{subsection}{An unnumbered subsection}
+		
+			\lipsum[3]
+
+
+
+
+%******end******
+\end{document}

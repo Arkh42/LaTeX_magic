@@ -115,6 +115,11 @@
 %-----
 \section{Classes for common documents}
 
+
+	%-----
+	\subsection{\LaTeX{}'s standard classes}
+	
+
 \begin{frame}
 	\frametitle{Classes for common documents}
 	\framesubtitle{\LaTeX{}'s standard classes: presentation}
@@ -202,6 +207,102 @@
 \end{frame}
 
 
+	%-----
+	\subsection{KOMA-Script classes}
+
+
+\begin{frame}[fragile]
+	\frametitle{Classes for common documents}
+	\framesubtitle{KOMA-Script classes: presentation}
+	
+	An alternative to the standard classes are the KOMA-Script classes.
+	They provide default document layout that are specifically well-suited for European standard.
+	
+	KOMA-Script can be considered as an extension to \LaTeX{}.
+	It provides many keys to facilitate the user's life (e.g., \verb|\addchap{}|), add fields (e.g., subtitle and dedication) and to easily change the document layout without loading additional packages.
+	
+	The table below presents the main classes used for most of the documents that are written:
+	\begin{table}[h]
+		\begin{tabular}{*{3}{c}}
+			\toprule
+			    Class      & \multicolumn{2}{c}{Highest heading} \\
+			\cmidrule{2-3} &  Name   &           Level           \\ \midrule
+			   scrartcl    & section &             0             \\
+			   scrreprt    & chapter &             1             \\
+			   scrbook     &  part   &             2             \\ \bottomrule
+		\end{tabular}
+	\end{table}
+	Refer to the \enquote{*\_complier\_\_komascript\_*} files in the \enquote{Examples} folder to see the difference.
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Classes for common documents}
+	\framesubtitle{KOMA-Script classes: options review (1)}
+	
+	
+	\structure{Paper size}.
+	By default, the document is a portrait paper. 
+	It is possible to use the \texttt{landscape} value for the \texttt{paper} key.
+	
+	In addition, the \texttt{paper} key can also takes a value which specifies the size of the document.
+	Most common are:
+	\begin{table}[h]
+		\begin{tabular}{*{3}{c}}
+			\toprule
+			    Value      & \multicolumn{2}{c}{Physical dimensions} \\
+			\cmidrule{2-3} &    Height     &          Width          \\ \midrule
+			 \texttt{A4}   & \SI{297}{\mm} &      \SI{210}{\mm}      \\
+			 \texttt{A5}   & \SI{210}{\mm} &      \SI{148}{\mm}      \\
+			 \texttt{B5}   & \SI{250}{\mm} &      \SI{176}{\mm}      \\ \bottomrule
+		\end{tabular}
+	\end{table}
+
+
+	\vspace*{1ex}
+	
+	
+	\structure{Font size}.
+	The key is \texttt{fontsize} and can take several values: \texttt{10pt}, \texttt{11pt}, \texttt{12pt}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Classes for common documents}
+	\framesubtitle{KOMA-Script classes: options review (2)}
+	
+	
+	\structure{Printed sides}.
+	Two options: \texttt{oneside} (default for article and report), \texttt{twoside} (default for book).
+	
+	
+	\structure{Chapter starting page}.
+	Three values for the \texttt{open} key option:
+	\begin{enumerate}
+		\item \texttt{right} to force chapters to start on a right-hand page by creating an empty left-hand page if necessary,
+		\item \texttt{left} which does the inverse of \texttt{right},
+		\item \texttt{any} to start chapters on any page.
+	\end{enumerate}
+	These options are not valid for scrartcl as there are no chapters.
+	
+	
+	\vspace*{1ex}
+	
+	
+	\structure{Number of columns}
+	Two options: \texttt{onecolumn}, \texttt{twocolumn}.
+	
+	
+	\vspace*{1ex}
+	
+	
+	\structure{Maths-related options}.
+	
+	By default, equation tags (numbers) are created on the right-hand side.
+	This is modified by the \texttt{leqno} option.
+	
+	By default, displayed math environments (cf. tutorial B100) are centred.
+	They can be flushed left with the \texttt{fleqn} option.
+\end{frame}
+
 
 
 %-----
@@ -217,9 +318,6 @@
 		\begin{tabular}{*{3}{c}}
 			\toprule
 			 Class   & Highest heading  & Heading level \\ \midrule
-			scrartcl &     section      &       0       \\
-			scrreprt &     chapter      &       1       \\
-			scrbook  &       part       &       2       \\
 			 memoir  &       book       &       3       \\
 			 octavo  &     chapter      &       2       \\
 			  ncc    & option-dependent &      N/A      \\
