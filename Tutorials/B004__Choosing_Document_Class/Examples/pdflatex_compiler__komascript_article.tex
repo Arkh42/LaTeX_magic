@@ -2,7 +2,10 @@
 % ---------
 
 % Document class
-\documentclass[fontsize=11pt, paper=portait,A4]{scrartcl}
+\documentclass[%
+	paper=A4,portrait,%
+	fontsize=11pt,%
+]{scrartcl}
 
 % Font
 \usepackage{lmodern}
@@ -39,14 +42,15 @@
 
 \maketitle
 
-\tableofcontents
-
 
 \begin{abstract}
 	An abstract of the document.
 	
 	\lipsum[1-2]
 \end{abstract}
+
+
+\tableofcontents
 
 
 \section{A section}
