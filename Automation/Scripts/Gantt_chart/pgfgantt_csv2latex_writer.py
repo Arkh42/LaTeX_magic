@@ -31,7 +31,7 @@ class GanttWriter :
         return "\t\\ganttmilestone[name=" + label + "]{" + milestone + "}{" + date + "}\\\\ \n"
     
     def write_gantt_link( self, first_element, second_element ) :
-        return "\t\\ganttlink{" + first_element + "}{" + second_element + "} \n"
+        return "\t\t\\ganttlink{" + first_element + "}{" + second_element + "} \n"
 
 
     # Automatic processing
@@ -39,7 +39,7 @@ class GanttWriter :
 
         # Check if textline is empty
         if textline.strip() == "" :
-            print( "> > Empty line... ignored.")
+            print( "> > > Empty line... ignored.")
             return ""
 
         # Split on comma and remove extra white space
@@ -50,20 +50,20 @@ class GanttWriter :
         label = self.fields[1]
 
         if symbol == "#" :
-            print( "> > Comment detected ('#' symbol)... ignored." )
+            print( "> > > Comment detected ('#' symbol)... ignored." )
             return ""
         elif symbol == "W" :
-            print( "> > Workpackage being written." )
-            return self.write_gantt_workpackage( self.fields[2], self.fields[3], self.fields[4] )
+            print( "> > > Workpackage being written." )
+            return self.write_gantt_workpackage( self.fields[1], self.fields[2], self.fields[3] )
         elif symbol == "T" :
-            print( "> > Task being written." )
+            print( "> > > Task being written." )
             return self.write_gantt_task( label, self.fields[2], self.fields[3], self.fields[4] )
         elif symbol == "M" :
-            print( "> > Milestone being written.")
+            print( "> > > Milestone being written.")
             return self.write_gantt_milestone( label, self.fields[2], self.fields[3] )
         elif symbol == 'L' :
-            print( "> > Link being written." )
+            print( "> > > Link being written." )
             return self.write_gantt_link( self.fields[1], self.fields[2] )
         else :
-            print( "> > Unknown key. Please check the csv file.")
+            print( "> > > Unknown key. Please check the csv file.")
             return ""

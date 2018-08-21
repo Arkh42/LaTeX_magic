@@ -1,0 +1,23 @@
+#,	A comment that will be ignored. Can be useful to organize the data.
+#,	Empty lines are also ignored. Extra white space is ignored too.
+
+
+#,	description,							start-date,		end-date
+W,	A text to describe the workpackage,		2018-08-21,		2018-12-31
+
+#,	label			description,			start-date,		end-date
+T,	task_label1,	Text for Task 1,		2018-08-21,		2018-10-31
+T,	task_label2,	Text for Task 2,		2018-11-01,		2018-12-31
+L,	task_label1,	task_label2
+
+M,	pohar_tapeout,	Tape-out,				2017-10-19
+L,	pohar_design,	pohar_tapeout
+
+
+#, 	Another workpackage
+W,	Second workpackage,						2019-01-01,		2019-06-30
+
+#,	Tasks in parallel
+T,	task_label3,	Text for Task 3,		2019-01-01,		2019-06-30
+T,	task_label4,	Text for Task 4,		2019-01-01,		2019-06-30
+T,	task_label5,	Text for Task 5,		2019-03-01,		2019-06-30
