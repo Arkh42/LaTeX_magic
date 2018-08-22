@@ -1,0 +1,56 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+
+% Document class
+\documentclass{minimal}
+
+
+% Package Under Test (PUT)
+\usepackage[verbose]{umons-colours}
+
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+
+% Text
+\begin{document}
+
+
+Testing defined global UMONS colours: 
+\begin{itemize}
+	\item \textcolor{umonsRed}{umonsRed},
+	\item \textcolor{umonsBlue}{umonsBlue},
+	\item \textcolor{umonsGray}{umonsGray},
+	\item \textcolor{umonsYellow}{umonsYellow}.
+\end{itemize}
+
+Testing defined colours for UMONS faculties: 
+\begin{itemize}
+	\item Architecture is \textcolor{umonsColorFau}{umonsColorFau} or \textcolor{umonsColorArchi}{umonsColorArchi},
+	\item Medicine is \textcolor{umonsColorFmp}{umonsColorFmp} or \textcolor{umonsColorMedic}{umonsColorMedic},
+	\item Engineering is \textcolor{umonsColorFpms}{umonsColorFpms} or \textcolor{umonsColorFeng}{umonsColorFeng},
+	\item Psychology is \textcolor{umonsColorFpse}{umonsColorFpse} or \textcolor{umonsColorFpe}{umonsColorFpe} or \textcolor{umonsColorPsy}{umonsColorPsy},
+	\item Science is \textcolor{umonsColorFs}{umonsColorFs} or \textcolor{umonsColorFsci}{umonsColorFsci},
+	\item Translation is \textcolor{umonsColorFti}{umonsColorFti} or \textcolor{umonsColorEii}{umonsColorEii},
+	\item Economy is \textcolor{umonsColorFweg}{umonsColorFweg} or \textcolor{umonsColorWawa}{umonsColorWawa},
+	\item Human Sciences is \textcolor{umonsColorShs}{umonsColorShs}, and
+	\item Law is \textcolor{umonsColorLaw}{umonsColorLaw}.
+\end{itemize}
+
+
+
+%\begin{testcolors}[CMYK,RGB,HTML,gray]
+%	\testcolor{umonsRed}
+%\end{testcolors}
+
+
+\end{document}

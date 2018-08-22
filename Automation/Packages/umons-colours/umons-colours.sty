@@ -8,7 +8,8 @@
 \NeedsTeXFormat{LaTeX2e}
 
 % Package declaration
-\ProvidesPackage{_package_template}[2018/07/07 Additional information about the _package_template package]%mandatory argument is the file name without the .sty extension
+\ProvidesPackage{umons-colours}[2018/08/22 Package defining the colours specific to the University of Mons (Belgium).]
+
 
 
 %                              %
@@ -17,17 +18,10 @@
 %%                            %%
 %                              %
 
+
 % Packages needed in the declared options
-\RequirePackage[options]{package-name}[date]
+\RequirePackage{ifthen}
 
-% Commands declaration needed in the declared options
-\newcommand*{cmd}{def}
-\renewcommand*{cmd}{def}
-\DeclareRobustCommand*{cmd}{def}
-
-\newcommand{cmd}{def}
-\renewcommand{cmd}{def}
-\DeclareRobustCommand{cmd}{def}
 
 
 %             %
@@ -36,17 +30,28 @@
 %%           %%
 %             %
 
-% New option (useful commands: \CurrentOption, \OptionNotUsed, PassOptionsToPackage{options-list}{package-name})
-\DeclareOption{option_name}{code}
+
+% 'verbose' option
+\newboolean{@verbose}
+\setboolean{@verbose}{false}
+
+\DeclareOption{verbose}{%
+	\setboolean{@verbose}{true}%
+	\PackageInfo{umons-colours}{'verbose' option enabled}%
+}
+
 
 % Management of not explicitly declared options (default: error)
-\DeclareOption*{code}
+%\DeclareOption*{code}
+
 
 % Default option list
-\ExecuteOptions {options-list}
+%\ExecuteOptions{verbose}
+
 
 % Processing the options
 \ProcessOptions\relax
+
 
 
 %                       %
@@ -55,15 +60,83 @@
 %%                     %%
 %                       %
 
-% Call to specific packages
-\RequirePackage[options]{package-name}[date]
-\RequirePackageWithOptions{package-name}
 
-% Commands definition
-\newcommand*{cmd}{def}
-\renewcommand*{cmd}{def}
-\DeclareRobustCommand*{cmd}{def}
+% Loading 'xcolor'
+\RequirePackage{xcolor}
 
-\newcommand{cmd}{def}
-\renewcommand{cmd}{def}
-\DeclareRobustCommand{cmd}{def}
+
+% Defining global colours for the University
+\definecolor{umonsRed}{RGB}{168,0,57}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsRed' colour defined}}%
+	{\relax}
+
+\definecolor{umonsBlue}{RGB}{0,171,204}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsBlue' colour defined}}%
+	{\relax}
+
+\definecolor{umonsGray}{RGB}{150,150,150}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsGray' colour defined}}%
+	{\relax}
+
+\definecolor{umonsYellow}{RGB}{246,167,35}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsYellow' colour defined}}%
+	{\relax}
+
+
+% Defining colours specific to each faculty
+\definecolor{umonsColorFau}{RGB}{162,195,1}
+\colorlet{umonsColorArchi}{umonsColorFau}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFau' colour and 'umonsColorArchi' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorFmp}{RGB}{196,2,66}
+\colorlet{umonsColorMedic}{umonsColorFmp}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFmp' colour and 'umonsColorMedic' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorFpms}{RGB}{0,76,147}
+\colorlet{umonsColorFeng}{umonsColorFpms}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFpms' colour and 'umonsColorFeng' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorFpse}{RGB}{0,158,224}
+\colorlet{umonsColorFpe}{umonsColorFpse}
+\colorlet{umonsColorPsy}{umonsColorFpse}
+	\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFpse' colour and 'umonsColorFpe' and 'umonsColorPsy' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorFs}{RGB}{2,150,135}
+\colorlet{umonsColorFsci}{umonsColorFs}
+	\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFs' colour and 'umonsColorFsci' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorFti}{RGB}{205,0,76}
+\colorlet{umonsColorEii}{umonsColorFti}
+	\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFti' colour and 'umonsColorEii' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorFweg}{RGB}{0,70,150}
+\colorlet{umonsColorWawa}{umonsColorFweg}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorFweg' colour and 'umonsColorWawa' synonym defined}}%
+	{\relax}
+
+\definecolor{umonsColorShs}{RGB}{252,94,10}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorShs' colour defined}}%
+	{\relax}
+
+\definecolor{umonsColorLaw}{RGB}{102,40,74}
+\ifthenelse{\boolean{@verbose}}%
+	{\PackageInfo{umons-colours}{'umonsColorLaw' colour defined}}%
+	{\relax}
