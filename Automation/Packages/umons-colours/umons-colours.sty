@@ -1,0 +1,69 @@
+%                    %
+%%                  %%
+%%% IDENTIFICATION %%%
+%%                  %%
+%                    %
+
+% Version of LaTeX required
+\NeedsTeXFormat{LaTeX2e}
+
+% Package declaration
+\ProvidesPackage{_package_template}[2018/07/07 Additional information about the _package_template package]%mandatory argument is the file name without the .sty extension
+
+
+%                              %
+%%                            %%
+%%% PRELIMINARY DECLARATIONS %%%
+%%                            %%
+%                              %
+
+% Packages needed in the declared options
+\RequirePackage[options]{package-name}[date]
+
+% Commands declaration needed in the declared options
+\newcommand*{cmd}{def}
+\renewcommand*{cmd}{def}
+\DeclareRobustCommand*{cmd}{def}
+
+\newcommand{cmd}{def}
+\renewcommand{cmd}{def}
+\DeclareRobustCommand{cmd}{def}
+
+
+%             %
+%%           %%
+%%% OPTIONS %%%
+%%           %%
+%             %
+
+% New option (useful commands: \CurrentOption, \OptionNotUsed, PassOptionsToPackage{options-list}{package-name})
+\DeclareOption{option_name}{code}
+
+% Management of not explicitly declared options (default: error)
+\DeclareOption*{code}
+
+% Default option list
+\ExecuteOptions {options-list}
+
+% Processing the options
+\ProcessOptions\relax
+
+
+%                       %
+%%                     %%
+%%% CORE DECLARATIONS %%%
+%%                     %%
+%                       %
+
+% Call to specific packages
+\RequirePackage[options]{package-name}[date]
+\RequirePackageWithOptions{package-name}
+
+% Commands definition
+\newcommand*{cmd}{def}
+\renewcommand*{cmd}{def}
+\DeclareRobustCommand*{cmd}{def}
+
+\newcommand{cmd}{def}
+\renewcommand{cmd}{def}
+\DeclareRobustCommand{cmd}{def}
