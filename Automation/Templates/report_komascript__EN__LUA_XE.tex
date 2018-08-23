@@ -1,0 +1,104 @@
+ %%%%%%%%%%%%%%
+%%            %%
+%   PREAMBLE   %
+%%            %%
+ %%%%%%%%%%%%%%
+
+
+% Document class
+\documentclass[%
+	paper=portrait,%	paper orientation
+	paper=A4,%			paper size
+	fontsize=11pt,%		font size
+	english,%			language
+]{scrreprt}
+
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+
+% Language and typography
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\setotherlanguage{french}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage{microtype}
+
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+
+
+ %%%%%%%%%%%%%%
+%%            %%
+%   DOCUMENT   %
+%%            %%
+ %%%%%%%%%%%%%% 
+
+
+% Information
+\titlehead{Head title of the document}
+\subject{Subject of the document}
+
+\title{Title of the document}
+\subtitle{Subtitle of the document}
+
+\author{Firstname1 Lastname1 \and Firstname2 Lastname2 \and Firstname3 Lastname3}
+
+\date{\today}
+
+\publishers{Publishers, supervisors, readers\ldots}
+
+
+% Text
+\begin{document}
+%******begin******
+
+
+\maketitle
+
+
+\begin{abstract}
+	An abstract of the document.
+\end{abstract}
+
+
+\tableofcontents
+
+
+\chapter{A chapter}
+
+	Some text.
+
+
+	\section{A section}
+	
+		Some text.
+		
+		
+		\subsection{A subsection}
+		
+			Some text.
+			
+			
+			\subsubsection{A subsubsection}
+			
+				If really needed.
+
+
+
+\chapter{Another chapter}
+
+	Some text.
+	
+
+%******end******
+\end{document}

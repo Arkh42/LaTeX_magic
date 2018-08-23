@@ -1,0 +1,100 @@
+ %%%%%%%%%%%%%%
+%%            %%
+%   PREAMBLE   %
+%%            %%
+ %%%%%%%%%%%%%%
+
+
+% Document class
+\documentclass[%
+	paper=portrait,%	paper orientation
+	paper=A4,%			paper size
+	fontsize=11pt,%		font size
+	english,%			language
+]{scrreprt}
+
+
+% Font
+\usepackage{lmodern}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% Language and typography
+\usepackage[main=english, french]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+
+% Hyperref
+\usepackage[hidelinks]{hyperref}
+
+
+
+ %%%%%%%%%%%%%%
+%%            %%
+%   DOCUMENT   %
+%%            %%
+ %%%%%%%%%%%%%% 
+
+
+% Information
+\titlehead{Head title of the document}
+\subject{Subject of the document}
+
+\title{Title of the document}
+\subtitle{Subtitle of the document}
+
+\author{Firstname1 Lastname1 \and Firstname2 Lastname2 \and Firstname3 Lastname3}
+
+\date{\today}
+
+\publishers{Publishers, supervisors, readers\ldots}
+
+
+% Text
+\begin{document}
+%******begin******
+
+\maketitle
+
+
+\begin{abstract}
+	An abstract of the document.
+\end{abstract}
+
+
+\tableofcontents
+
+
+\chapter{A chapter}
+
+	Some text.
+	
+	
+	\section{A section}
+	
+		Some text.
+		
+		
+		\subsection{A subsection}
+		
+			Some text.
+			
+			
+			\subsubsection{A subsubsection}
+			
+				If really needed.
+
+
+
+\chapter{Another chapter}
+
+	Some text.
+	
+	
+%******end******
+\end{document}
