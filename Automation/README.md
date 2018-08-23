@@ -7,56 +7,15 @@ On the other hand, user-friendly interfaces must be built so that only the compi
 The latter is the goal of this section.
 
 
+
 ## Organisation
 
 The folder is organised as follow:
 * Classes
 * Packages
+* Scripts
 * Templates
 
-Here below is shown a list of the content of each part.
-
-
-### Contents
-
-
-#### Classes
-
-Empty.
-
-
-#### Packages
-
-Empty.
-
-
-#### Templates
-
-| Name							| Short description														|
-| :---------------------------- | :-------------------------------------------------------------------- |
-| _class_template				| Structure for class definition to speed the writing up.				|
-| _package_template				| Structure for package definition to speed the writing up.				|
-| report_standard__EN__LUA_XE	| Report (standard class) for medium-size document including chapters.	|
-| report_standard__EN__PDF		| Report (standard class) for medium-size document including chapters.	|
-
-
-## Rules for contribution
-
-
-### How to name a template
-
-The template files must be named regarding the following rule:
-*class_name__XX__YYY*,
-where
-* *class_name* is the name of the class on which the template is based,
-* *XX* are the letters corresponding to the main language of the template (see table below),
-* *YYY* are the letters corresponding to the compilers which can be used for the proposed template.
-
-| Symbol | Compiler	|
-| :----: | :------- |
-| LUA	 | LuaLaTeX |
-| PDF	 | PDFLaTeX |
-| XE	 | XeLaTeX  |
 
 
 ## References
