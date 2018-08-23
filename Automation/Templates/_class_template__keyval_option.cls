@@ -1,8 +1,8 @@
-%                    %
-%%                  %%
-%%% IDENTIFICATION %%%
-%%                  %%
-%                    %
+ %%%%%%%%%%%%%%%%
+%%              %%
+% IDENTIFICATION %
+%%              %%
+ %%%%%%%%%%%%%%%%
 
 
 % Version of LaTeX required
@@ -13,11 +13,11 @@
 
 
 
-%                              %
-%%                            %%
-%%% PRELIMINARY DECLARATIONS %%%
-%%                            %%
-%                              %
+ %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                        %%
+% PRELIMINARY DECLARATIONS %
+%%                        %%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % Loading 'kvoptions' package to manage key=value options
@@ -42,11 +42,11 @@
 
 
 
-%             %
-%%           %%
-%%% OPTIONS %%%
-%%           %%
-%             %
+ %%%%%%%%%
+%%       %%
+% OPTIONS %
+%%       %%
+ %%%%%%%%%
 
 
 % Setup key=value options (examble: 'foobar' family options)
@@ -73,11 +73,11 @@
 
 
 
-%                       %
-%%                     %%
-%%% CORE DECLARATIONS %%%
-%%                     %%
-%                       %
+ %%%%%%%%%%%%%%%%%%%
+%%                 %%
+% CORE DECLARATIONS %
+%%                 %%
+ %%%%%%%%%%%%%%%%%%%
 
 
 % Building on another class

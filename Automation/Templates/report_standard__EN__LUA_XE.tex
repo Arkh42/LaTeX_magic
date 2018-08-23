@@ -1,8 +1,17 @@
-%% Preamble
-% ---------
+ %%%%%%%%%%%%%%
+%%            %%
+%   PREAMBLE   %
+%%            %%
+ %%%%%%%%%%%%%%
+
 
 % Document class
-\documentclass[11pt, a4paper]{report}
+\documentclass[%
+	a4paper,%	paper size
+	11pt,%		font size
+	english,%	language
+]{report}
+
 
 % Font
 \usepackage{fontspec}
@@ -10,6 +19,7 @@
 	SmallCapsFont={* Caps},%	enable small capital font family
 	SlantedFont={* Slanted},%	enable slanted font family
 ]{Latin Modern Roman}
+
 
 % Language and typography
 \usepackage{polyglossia}
@@ -20,18 +30,24 @@
 
 \usepackage{microtype}
 
+
 % Hyperref
 \usepackage[hidelinks]{hyperref}
 
 
 
-%% Document
-% ---------
+ %%%%%%%%%%%%%%
+%%            %%
+%   DOCUMENT   %
+%%            %%
+ %%%%%%%%%%%%%% 
+
 
 % Information
 \title{Title of the document}
 \author{Firstname1 Lastname1 \and Firstname2 Lastname2 \and Firstname3 Lastname3}
 \date{\today}
+
 
 % Text
 \begin{document}

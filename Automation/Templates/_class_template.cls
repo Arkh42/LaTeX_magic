@@ -1,8 +1,8 @@
-%                    %
-%%                  %%
-%%% IDENTIFICATION %%%
-%%                  %%
-%                    %
+ %%%%%%%%%%%%%%%%
+%%              %%
+% IDENTIFICATION %
+%%              %%
+ %%%%%%%%%%%%%%%%
 
 
 % Version of LaTeX required
@@ -13,11 +13,11 @@
 
 
 
-%                              %
-%%                            %%
-%%% PRELIMINARY DECLARATIONS %%%
-%%                            %%
-%                              %
+ %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                        %%
+% PRELIMINARY DECLARATIONS %
+%%                        %%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % Packages needed in the declared options
@@ -35,11 +35,11 @@
 
 
 
-%             %
-%%           %%
-%%% OPTIONS %%%
-%%           %%
-%             %
+ %%%%%%%%%
+%%       %%
+% OPTIONS %
+%%       %%
+ %%%%%%%%%
 
 
 % New option (useful commands: \CurrentOption, \OptionNotUsed, PassOptionsToPackage{options-list}{package-name}, \PassOptionsToClass{options-list}{class-name})
@@ -57,11 +57,11 @@
 
 
 
-%                       %
-%%                     %%
-%%% CORE DECLARATIONS %%%
-%%                     %%
-%                       %
+ %%%%%%%%%%%%%%%%%%%
+%%                 %%
+% CORE DECLARATIONS %
+%%                 %%
+ %%%%%%%%%%%%%%%%%%%
 
 
 % Building on another class
