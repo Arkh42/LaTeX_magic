@@ -6,7 +6,14 @@
 
 
 % Document class
-\documentclass{minimal}
+\documentclass{standalone}
+
+
+% Font
+\usepackage{lmodern}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 
 % Package Under Test (PUT)
@@ -46,7 +53,19 @@ Testing defined colours for UMONS faculties:
 	\item Law is \textcolor{umonsColorLaw}{umonsColorLaw}.
 \end{itemize}
 
+\begin{table}
+	\centering
+	\caption{Test}
+\end{table}
 
+\begin{testcolors}[RGB,HTML,gray]
+	\testcolor{umonsRed}
+	\testcolor{umonsBlue}
+	\testcolor{umonsGray}
+	\testcolor{umonsYellow}
+	\testcolor[cmyk]{0,0,.5,.5}
+	\testcolor[rgb:cmyk]{0,0,.5,.5}
+\end{testcolors}
 
 %\begin{testcolors}[CMYK,RGB,HTML,gray]
 %	\testcolor{umonsRed}
