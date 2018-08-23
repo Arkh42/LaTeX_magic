@@ -1,0 +1,66 @@
+%              %
+%%            %%
+%%% PREAMBLE %%%
+%%            %%
+%              %
+
+
+% Document class
+\documentclass{article}% Note: clash when using the 'standalone' class
+
+
+% Font
+\usepackage{fontspec}
+\setmainfont[%
+	SmallCapsFont={* Caps},%	enable small capital font family
+	SlantedFont={* Slanted},%	enable slanted font family
+]{Latin Modern Roman}
+
+
+% Package Under Test (PUT)
+\usepackage[verbose]{umons-colours}
+
+
+
+%              %
+%%            %%
+%%% DOCUMENT %%%
+%%            %%
+%              %
+
+
+% Text
+\begin{document}
+
+
+\thispagestyle{empty}
+
+
+	\begin{testcolors}[RGB,HTML,gray]
+		% Global UMONS colours
+		\testcolor{umonsRed}
+		\testcolor{umonsBlue}
+		\testcolor{umonsGray}
+		\testcolor{umonsYellow}
+		% Faculty-related colours
+		\testcolor{umonsColorFau}
+		\testcolor{umonsColorArchi}
+		\testcolor{umonsColorFmp}
+		\testcolor{umonsColorMedic}
+		\testcolor{umonsColorFpms}
+		\testcolor{umonsColorFeng}
+		\testcolor{umonsColorFpse}
+		\testcolor{umonsColorFpe}
+		\testcolor{umonsColorPsy}
+		\testcolor{umonsColorFs}
+		\testcolor{umonsColorFsci}
+		\testcolor{umonsColorFti}
+		\testcolor{umonsColorEii}
+		\testcolor{umonsColorFweg}
+		\testcolor{umonsColorWawa}
+		\testcolor{umonsColorShs}
+		\testcolor{umonsColorLaw}
+	\end{testcolors}
+
+
+\end{document}
