@@ -9,7 +9,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 % Class declaration
-\ProvidesClass{_class_template}[2018/07/07 Additional information about the _class_template class]%mandatory argument is the file name without the .cls extension
+\ProvidesClass{_class_template__keyval_option}[2018/08/23 Additional information about the _class_template__keyval_option class]%mandatory argument is the file name without the .cls extension
 
 
 
@@ -18,6 +18,13 @@
 %%% PRELIMINARY DECLARATIONS %%%
 %%                            %%
 %                              %
+
+
+% Loading 'kvoptions' package to manage key=value options
+\RequirePackage{kvoptions}
+
+% Loading 'etoolbox' for programming facilities
+\RequirePackage{etoolbox}
 
 
 % Packages needed in the declared options
@@ -42,18 +49,27 @@
 %             %
 
 
-% New option (useful commands: \CurrentOption, \OptionNotUsed, PassOptionsToPackage{options-list}{package-name}, \PassOptionsToClass{options-list}{class-name})
-\DeclareOption{option_name}{code}
+% Setup key=value options (examble: 'foobar' family options)
+\SetupKeyvalOptions{
+	family=foobar,
+	prefix=foobar@
+}
 
 
-% Management of not explicitly declared options (default: warning)
-\DeclareOption*{code}
+% New options
+\DeclareStringOption[initialValue]{keyName}[default]
 
-% Default option list
-\ExecuteOptions {options-list}
+\DeclareBoolOption[initialValue]{keyName}
+\DeclareComplementaryOption{keyName}{complementName}% Example: \DeclareBoolOption{draft}\DeclareComplementaryOption{final}{draft}
 
-% Processing the options
-\ProcessOptions\relax
+\DeclareVoidOption{optionName}{code}
+
+
+% Management of not explicitly declared options (default: error)
+\DeclareDefaultOption{code}
+
+% Processing the options (examble: 'foobar' family options)
+\ProcessKeyvalOptions{foobar}\relax
 
 
 
@@ -82,3 +98,18 @@
 \newcommand{cmd}{def}
 \renewcommand{cmd}{def}
 \DeclareRobustCommand{cmd}{def}
+
+
+% Use of declared StringOption
+\ifdefstring{\foobar@keyName}{value}{% if true
+	% code if true
+}{% else
+	% code if false
+}
+
+% Use of declared BoolOption
+\ifbool{foobar@keyName}{% if true
+	% code if true
+}{% else
+	% code if false
+}

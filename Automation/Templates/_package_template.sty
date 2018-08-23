@@ -4,11 +4,13 @@
 %%                  %%
 %                    %
 
+
 % Version of LaTeX required
 \NeedsTeXFormat{LaTeX2e}
 
 % Package declaration
 \ProvidesPackage{_package_template}[2018/07/07 Additional information about the _package_template package]%mandatory argument is the file name without the .sty extension
+
 
 
 %                              %
@@ -17,8 +19,10 @@
 %%                            %%
 %                              %
 
+
 % Packages needed in the declared options
 \RequirePackage[options]{package-name}[date]
+
 
 % Commands declaration needed in the declared options
 \newcommand*{cmd}{def}
@@ -30,14 +34,17 @@
 \DeclareRobustCommand{cmd}{def}
 
 
+
 %             %
 %%           %%
 %%% OPTIONS %%%
 %%           %%
 %             %
 
+
 % New option (useful commands: \CurrentOption, \OptionNotUsed, PassOptionsToPackage{options-list}{package-name})
 \DeclareOption{option_name}{code}
+
 
 % Management of not explicitly declared options (default: error)
 \DeclareOption*{code}
@@ -49,15 +56,18 @@
 \ProcessOptions\relax
 
 
+
 %                       %
 %%                     %%
 %%% CORE DECLARATIONS %%%
 %%                     %%
 %                       %
 
+
 % Call to specific packages
 \RequirePackage[options]{package-name}[date]
 \RequirePackageWithOptions{package-name}
+
 
 % Commands definition
 \newcommand*{cmd}{def}
