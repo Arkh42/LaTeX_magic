@@ -21,7 +21,7 @@ Unit tests
 ----------
 
 
-List of tested features:
+### List of tested features
 * compilers [2 effective tests]
 	- [ ] LaTeX,
 	- [X] PDFLaTeX;
@@ -33,3 +33,8 @@ List of tested features:
 
 Total of effective tests: 4 tests.
 
+
+### Remarks
+For the [LuaLaTeX + `testcolors`] unit test, I could not use the `standalone` class
+because errors were genereted.
+I think that it might have a clash.
